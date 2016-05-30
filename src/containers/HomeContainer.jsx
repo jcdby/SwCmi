@@ -22,6 +22,7 @@ const navbarInstance = (
     <Nav>
       <NavItem eventKey={1} href="#">교회 소개</NavItem>
       <NavItem eventKey={2} href="#">말씀</NavItem>
+      <NavItem eventKey={4} href="#">갤러리</NavItem>
       <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
         <MenuItem eventKey={3.1}>Action</MenuItem>
         <MenuItem eventKey={3.2}>Another action</MenuItem>
