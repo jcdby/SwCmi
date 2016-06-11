@@ -27,5 +27,5 @@ precondition:
 1. open terminal(console in windows)
 2. input command  ---> npm install 
 3. input command --> gulp 
-4. input command --> node index.js (for running)
+4. input command --> npm run start (for running)
 
