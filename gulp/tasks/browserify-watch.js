@@ -28,7 +28,8 @@ module.exports = function (gulp) {
 
     var bundle_Index = function () {
         return bundler_Index
-            .transform("babelify", {presets: ["es2015", "react"]})
+            .transform("babelify", {presets: ["es2015", "stage-0", "react"]})
+            //.transform("babelify", {presets: ["es2015", "react"]})
             .bundle()
             .on('error', gutil.log.bind(gutil, 'Browserify Error'))
             .pipe(source('bundle.js'))

@@ -1,12 +1,14 @@
 import React from 'react'
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
-//import MainPage from '../page/MainPage'
-//import GalleryPage from '../page/GalleryPage'
 import MainPage from '../components/containers/MainPage'
 import GalleryPage from '../components/containers/GalleryPage'
 import MainLayout from '../components/layouts/MainLayout'
 
-export default
+
+import ForumContainer from '../components/containers/ForumContainer.jsx';
+import ForumTopicContainer from '../components/containers/ForumTopicContainer.jsx';
+
+
 class APPRouter extends React.Component {
     render() {
         return (
@@ -14,27 +16,31 @@ class APPRouter extends React.Component {
                 <Route path="/" component={MainLayout}>
                     <IndexRoute component={MainPage}/>
                     <Route path="gallery" component={GalleryPage}/>
+                    <Route path="forum">
+                        <IndexRoute component={ForumContainer} />
+                        <Route path=":forumID" component={ForumTopicContainer} />
+                    </Route>
                 </Route>
             </Router>
         )
     }
 }
+export default APPRouter;
 
-//export default class APPRouter extends React.Component {
+//
+//class APPRouter extends React.Component {
 //    render() {
 //        return (
 //            <Router history={browserHistory}>
-//                <Route path="/" component={index}>
+//                <Route path="/" component={MainLayout}>
 //                    <IndexRoute component={MainPage}/>
 //                    <Route path="gallery" component={GalleryPage}/>
 //                </Route>
-//
 //            </Router>
 //        )
-//
 //    }
 //}
-
+//
 
 // <Router history={browserHistory}>
 //    <Route path="/" component={HomeContainer}>

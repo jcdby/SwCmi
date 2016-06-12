@@ -1,7 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-
+import {Provider} from 'react-redux'
+import store from './store/Store.jsx'
 import APPRouter from './router/Router'
 
-ReactDOM.render((<APPRouter/>), document.getElementById('suwonApp'))
+ReactDOM.render(
+    <Provider store={store}>
+        <APPRouter/>
+    </Provider>,
+    document.getElementById('suwonApp')
+);
 
