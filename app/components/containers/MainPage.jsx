@@ -1,8 +1,8 @@
 import React from 'react'
-import Header from './../components//Header'
+import Header from '../views/Header'
 import { Footer } from 'rebass'
-import CellIntro from './../components//CellIntro'
-import Carousel from '../components//Carousel'
+import CellIntro from '../views/CellIntro'
+import Carousel from '../views/Carousel'
 
 export default class MainPage extends React.Component {
   render() {

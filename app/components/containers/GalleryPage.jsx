@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from './../components//Header'
+import Header from '../views/Header'
 import {Link} from 'react-router'
 
 export default class GalleryPage extends React.Component {
