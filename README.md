@@ -5,14 +5,14 @@ SwCmi is an open source Project. It is a website for Su Won Missionary Church. W
 ### source code organized as follow
 
 1. app is the front-end code for development
-      ..* components gathers the logical components of the application
-          ..* actions keeps the actions that can be associated to a component e.g. get user data
-          ..* containers is the folder for containers which control the data state.
-          ..* layouts it the folder for layouts of the APP e.g. static views that are repeated on many pages
-          ..* views is the visual part of a component. This is where markup is written.
-      ..* reducers is where the states of each component is kept. This is part of the redux pattern
-      ..* router is the where we define the routes of the app i.e. how the components are mapped to one another
-      ..* store is the unique place where the state of the application can be modified. This is part of the redux pattern. It imports the reducers.
+⋅⋅* components gathers the logical components of the application
+⋅⋅* actions keeps the actions that can be associated to a component e.g. get user data
+⋅⋅* containers is the folder for containers which control the data state.
+⋅⋅* layouts it the folder for layouts of the APP e.g. static views that are repeated on many pages
+⋅⋅* views is the visual part of a component. This is where markup is written.
+⋅⋅* reducers is where the states of each component is kept. This is part of the redux pattern
+⋅⋅* router is the where we define the routes of the app i.e. how the components are mapped to one another
+⋅⋅* store is the unique place where the state of the application can be modified. This is part of the redux pattern. It imports the reducers.
 2. gulp is the task runner e.g. building the application
 3. public is the folder with the static built files,
 4. server is the folder for the dev web server
