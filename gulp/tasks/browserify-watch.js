@@ -11,8 +11,8 @@ var rootDir = require('../util/get-root-dir')();
 
 module.exports = function (gulp) {
 
-    var destFolder = path.join(rootDir, "src", "public");
-    var entryFile = path.join(rootDir, "src", 'app.jsx');
+    var destFolder = path.join(rootDir, "public");
+    var entryFile = path.join(rootDir, "app", 'app.jsx');
     console.log("rootDir " + rootDir);
     console.log("entryFile " + entryFile);
     console.log("destFolder " + destFolder);

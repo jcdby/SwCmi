@@ -26,7 +26,7 @@ export default class MainPage extends React.Component {
         </div>
         <div className={'col-md-12'}>
           <Footer>
-            <p>대한예수교장로회 합신 수원노회 수원선교교회 & 수원 CMI</p>
+            <p>대한예수교장로회 합신 수원노회 수원선교교회 &amp; 수원 CMI</p>
             <p>주소: 경기도 수원시 영통구 월드컵로 193번지 37(원천동 29-48) ☏ 031) 213-0208</p>
             <p>담임목사: 고양주 목사</p>
           </Footer>
