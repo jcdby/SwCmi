@@ -9,8 +9,6 @@ export default class Forum_list extends React.Component {
 
 
     render() {
-
-
         return (
             <div id="forum-container">
                 <ListGroup>
