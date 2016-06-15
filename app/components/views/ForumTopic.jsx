@@ -6,7 +6,7 @@ import React from 'react';
 import {ListGroupItem, Panel, Button, FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap'
 import {Link} from 'react-router';
 
-class ForumTopic extends React.Component {
+export default class ForumTopic extends React.Component {
 
     render() {
         return (
@@ -143,5 +143,5 @@ class ForumTopic extends React.Component {
 
 }
 
-export default ForumTopic;
+
 

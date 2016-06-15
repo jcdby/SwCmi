@@ -19,7 +19,7 @@ module.exports = function (gulp) {
 
     var bundler_Index = browserify({
         entries: [entryFile],
-        extensions: ['.jsx'],
+        extensions: ['.jsx', '.js'],
         debug: true,
         cache: {},
         packageCache: {},
@@ -39,6 +39,10 @@ module.exports = function (gulp) {
     bundle_Index();
 
     var watchifyBundler = watchify(bundler_Index);
-    watchifyBundler.on('update', bundle_Index);
+    watchifyBundler.on('update', function () {
+        console.log('recompiling........');
+        bundle_Index()
+
+    });
 
 };

@@ -5,7 +5,7 @@ import {Button,ListGroup, ListGroupItem, Panel,Accordion} from 'react-bootstrap'
 import {Link} from 'react-router';
 
 
-export class Forum_list extends React.Component {
+export default class Forum_list extends React.Component {
 
 
     render() {
@@ -52,7 +52,7 @@ export class Forum_list extends React.Component {
 
 }
 
-export default Forum_list;
+
 
 //
 //render() {

@@ -5,8 +5,8 @@ import GalleryPage from '../components/containers/GalleryPage'
 import MainLayout from '../components/layouts/MainLayout'
 
 
-import ForumContainer from '../components/containers/ForumContainer.jsx';
-import ForumTopicContainer from '../components/containers/ForumTopicContainer.jsx';
+import ForumContainer from '../components/containers/ForumContainer';
+import ForumTopicContainer from '../components/containers/ForumTopicContainer';
 
 
 class APPRouter extends React.Component {
