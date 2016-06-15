@@ -1,9 +1,9 @@
 import React from 'react';
 import axios from 'axios';
-import {getForumCategoriesSuccess} from '../actions/forum-actions.jsx';
+import {getForumCategoriesSuccess} from '../actions/forum-actions';
 import {connect} from 'react-redux';
-import store from '../../store/Store.jsx';
-import Forum_list from '../views/Forum_list.jsx';
+import store from '../../store/Store';
+import Forum_list from '../views/Forum_list';
 
 class ForumContainer extends React.Component {
     componentDidMount() {

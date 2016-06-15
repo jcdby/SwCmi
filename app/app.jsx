@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
-import store from './store/Store.jsx'
+import store from './store/Store'
 import APPRouter from './router/Router'
 
 ReactDOM.render(

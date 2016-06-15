@@ -2,10 +2,10 @@ import React from 'react'
 import axios from 'axios'
 import {connect} from 'react-redux'
 
-import store from '../../store/Store.jsx'
-import {getForumTopicSuccess, setForumTopicSuccess} from '../actions/forum-actions.jsx'
+import store from '../../store/Store'
+import {getForumTopicSuccess, setForumTopicSuccess} from '../actions/forum-actions'
 
-import ForumTopic from '../views/ForumTopic.jsx'
+import ForumTopic from '../views/ForumTopic'
 
 class ForumTopicContainer extends React.Component {
 

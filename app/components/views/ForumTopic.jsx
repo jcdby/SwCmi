@@ -20,7 +20,6 @@ class ForumTopic extends React.Component {
     }
 
     createTopic(topic) {
-        console.log('topic : ' + JSON.stringify(topic));
         return (
             <span>
                 <span className="topic-name" >
@@ -91,7 +90,6 @@ class ForumTopic extends React.Component {
 
 
     createPost(post) {
-        console.log('post : ' + JSON.stringify(post));
         return (
             <Panel header={post.title} eventKey={post.post_id} key={post.post_id}>
                 <div>
