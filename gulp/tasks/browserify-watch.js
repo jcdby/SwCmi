@@ -5,8 +5,6 @@ var watchify = require('watchify');
 var path = require('path');
 var rootDir = require('../util/get-root-dir')();
 
-// var reactify = require('reactify');
-// const babel = require('gulp-babel');
 
 
 module.exports = function (gulp) {
@@ -26,10 +24,10 @@ module.exports = function (gulp) {
         fullPaths: true
     });
 
-    var bundle_Index = function () {
+    var bundle_Index = function (file) {
+        if (file) gutil.log('Recompiling ' + file);
         return bundler_Index
             .transform("babelify", {presets: ["es2015", "stage-0", "react"]})
-            //.transform("babelify", {presets: ["es2015", "react"]})
             .bundle()
             .on('error', gutil.log.bind(gutil, 'Browserify Error'))
             .pipe(source('bundle.js'))
@@ -39,10 +37,7 @@ module.exports = function (gulp) {
     bundle_Index();
 
     var watchifyBundler = watchify(bundler_Index);
-    watchifyBundler.on('update', function () {
-        console.log('recompiling........');
-        bundle_Index()
-
-    });
+    watchifyBundler.on('update', bundle_Index);
 
 };
+
