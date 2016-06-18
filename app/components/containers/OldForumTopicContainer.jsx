@@ -5,9 +5,9 @@ import {connect} from 'react-redux'
 import store from '../../store/Store'
 import {getForumTopicSuccess, setForumTopicSuccess} from '../actions/forum-actions'
 
-import ForumTopic from '../views/ForumTopic'
+import OldForumTopic from '../views/Old_ForumTopic.jsx'
 
-class ForumTopicContainer extends React.Component {
+class OldForumTopicContainer extends React.Component {
 
 
     constructor(props) {
@@ -23,21 +23,21 @@ class ForumTopicContainer extends React.Component {
 
     componentDidMount() {
         var forumID = this.props.params.forumID;
-        console.log('ForumTopicContainer componentDidMount, calling API ' + '/api/forum/' + forumID);
+        console.log('ForumTopicContainer componentDidMount, calling API ' + '/api/old_forum/' + forumID);
 
-        axios.get('/api/forum/' + forumID)
+        axios.get('/api/old_forum/' + forumID)
             .then((res) => {
                 store.dispatch(getForumTopicSuccess(res.data));
                 return res;
             })
             .catch((err) => {
-                console.error('API call error', '/api/forum/' + forumID, err);
+                console.error('API call error', '/api/old_forum/' + forumID, err);
             })
     }
 
     render() {
         return (
-            <ForumTopic
+            <OldForumTopic
                 author_nameProp = {this.state.author_name}
                 post_titleProp = {this.state.post_title}
                 post_textProp = {this.state.post_text}
@@ -63,7 +63,7 @@ class ForumTopicContainer extends React.Component {
 
         console.log('in addPost, trying to send: ' + JSON.stringify(post));
 
-        axios.post('/api/forum/' + forumID, post)
+        axios.post('/api/old_forum/' + forumID, post)
             .then((res) => {
                 console.log('Ajax response: ' + JSON.stringify(res.data));
                 //supposed to give back the whole updated topic
@@ -74,7 +74,7 @@ class ForumTopicContainer extends React.Component {
                 return res;
             })
             .catch((err) => {
-                console.error('API POST call error', '/api/forum/' + forumID, err);
+                console.error('API POST call error', '/api/old_forum/' + forumID, err);
             });
     };
 
@@ -95,8 +95,8 @@ class ForumTopicContainer extends React.Component {
 
 const mapStateToStore = function (store) {
     return {
-        topic: store.forumState.topic
+        topic: store.oldForumState.topic
     }
 };
 
-export default connect(mapStateToStore)(ForumTopicContainer);
+export default connect(mapStateToStore)(OldForumTopicContainer);

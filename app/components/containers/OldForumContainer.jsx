@@ -3,31 +3,32 @@ import axios from 'axios';
 import {getForumCategoriesSuccess} from '../actions/forum-actions';
 import {connect} from 'react-redux';
 import store from '../../store/Store';
-import Forum_list from '../views/Forum_list';
+import OldForum_list from '../views/Old_Forum_list.jsx';
 
-class ForumContainer extends React.Component {
+class OldForumContainer extends React.Component {
     componentDidMount() {
-        axios.get('/api/forum')
+        axios.get('/api/old_Forum')
             .then(res => {
+                console.log('api called front end');
                 store.dispatch(getForumCategoriesSuccess(res.data));
                 return res;
             })
             .catch(function (err) {
-                console.error('API call error', '/api/forum', err);
+                console.error('API call error', '/api/oldForum', err);
             });
     }
 
-    render() {
+    render = () => {
         return (
-            <Forum_list categoriesProp = {this.props.categories}/>
+            <OldForum_list categoriesProp = {this.props.categories}/>
         )
     }
 }
 
 const mapStateToStore = function (store) {
     return {
-        categories: store.forumState.categories
+        categories: store.oldForumState.categories
     };
 };
 
-export default connect(mapStateToStore)(ForumContainer);
+export default connect(mapStateToStore)(OldForumContainer);

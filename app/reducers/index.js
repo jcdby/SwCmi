@@ -1,11 +1,13 @@
 import { combineReducers }  from 'redux';
 
 // reducers
-import forumReducer from './forumReducer';
+import oldForumReducer from './oldForumReducer.js';
+import forumReducer from ''
 
 // combine reducers
 const reducers = combineReducers({
-    forumState: forumReducer
+    oldForumState: oldForumReducer,
+    forumState: forumStateReducer
 });
 
 export default reducers;

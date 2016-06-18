@@ -27,8 +27,11 @@ class Header extends React.Component {
                         <NavItem eventKey={4} href="/gallery">
                             갤러리
                         </NavItem>
-                        <NavItem eventKey={5} href="/forum">
+                        <NavItem eventKey={5} href="/old_forum">
                             계시판
+                        </NavItem>
+                        <NavItem eventKey={6} href="/forum">
+                            New Forum
                         </NavItem>
                         <NavDropdown eventKey={3} title="More" id="basic-nav-dropdown">
                             <MenuItem eventKey={3.1}> Action

@@ -11,7 +11,7 @@ export default class ForumTopic extends React.Component {
     render() {
         return (
             <ListGroupItem  key={this.props.topicProp.id}>
-                <Link to={'/forum'}>
+                <Link to={'/old_forum'}>
                     <em>Go back to the Forum list</em>
                 </Link>
                 {this.createTopic(this.props.topicProp)}
