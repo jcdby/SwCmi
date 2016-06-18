@@ -14,7 +14,7 @@ class Header extends React.Component {
                 <Navbar inverse fixedTop>
                     <Navbar.Header>
                         <Navbar.Brand>
-                            <a href="/">수원 선교 교회</a>
+                            <Link style={{"color": "#9d9d9d"}} to="/">수원 선교 교회</Link>
                         </Navbar.Brand>
                     </Navbar.Header>
                     <Nav>
@@ -24,11 +24,11 @@ class Header extends React.Component {
                         <NavItem eventKey={2} href="#">
                             설교 동영상
                         </NavItem>
-                        <NavItem eventKey={4} href="/gallery">
-                            갤러리
+                        <NavItem eventKey={4} >
+                            <Link style={{"color": "#9d9d9d"}} to="/gallery">갤러리</Link>
                         </NavItem>
-                        <NavItem eventKey={5} href="/forum">
-                            계시판
+                        <NavItem eventKey={5} >
+                            <Link style={{"color": "#9d9d9d"}} to="/forum">계시판</Link>                   
                         </NavItem>
                         <NavDropdown eventKey={3} title="More" id="basic-nav-dropdown">
                             <MenuItem eventKey={3.1}> Action
