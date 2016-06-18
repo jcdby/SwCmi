@@ -26,4 +26,4 @@ const forumReducer = function(state = initialForumState, action = '') {
     return state;
 };
 
-export default initialForumReducer;
+export default forumReducer;

@@ -5,6 +5,8 @@ import NavItem from 'react-bootstrap/lib/NavItem'
 import NavDropdown from 'react-bootstrap/lib/NavDropdown'
 import MenuItem from 'react-bootstrap/lib/MenuItem'
 import { Link } from 'react-router'
+import { LinkContainer } from 'react-router-bootstrap'
+
 
 export default
 class Header extends React.Component {
@@ -14,25 +16,40 @@ class Header extends React.Component {
                 <Navbar inverse fixedTop>
                     <Navbar.Header>
                         <Navbar.Brand>
-                            <a href="/">수원 선교 교회</a>
+                            <LinkContainer to="/">
+                                <NavItem eventKey={1}>
+                                    수원 선교 교회
+                                </NavItem>
+                            </LinkContainer>
                         </Navbar.Brand>
                     </Navbar.Header>
+
                     <Nav>
-                        <NavItem eventKey={1} href="#">
-                            교회 소개
-                        </NavItem>
-                        <NavItem eventKey={2} href="#">
-                            설교 동영상
-                        </NavItem>
-                        <NavItem eventKey={4} href="/gallery">
-                            갤러리
-                        </NavItem>
-                        <NavItem eventKey={5} href="/old_forum">
-                            계시판
-                        </NavItem>
-                        <NavItem eventKey={6} href="/forum">
-                            New Forum
-                        </NavItem>
+                        <LinkContainer to="">
+                            <NavItem eventKey={1}>
+                                교회 소개
+                            </NavItem>
+                        </LinkContainer>
+                        <LinkContainer to="">
+                            <NavItem eventKey={2}>
+                                설교 동영상
+                            </NavItem>
+                        </LinkContainer>
+                        <LinkContainer to="/gallery">
+                            <NavItem eventKey={4}>
+                                갤러리
+                            </NavItem>
+                        </LinkContainer>
+                        <LinkContainer to="/old_forum">
+                            <NavItem eventKey={5}>
+                                계시판
+                            </NavItem>
+                        </LinkContainer>
+                        <LinkContainer to="/forum">
+                            <NavItem eventKey={6}>
+                                New Forum
+                            </NavItem>
+                        </LinkContainer>
                         <NavDropdown eventKey={3} title="More" id="basic-nav-dropdown">
                             <MenuItem eventKey={3.1}> Action
                             </MenuItem>
