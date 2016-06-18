@@ -28,7 +28,10 @@ class Header extends React.Component {
                             <Link style={{"color": "#9d9d9d"}} to="/gallery">갤러리</Link>
                         </NavItem>
                         <NavItem eventKey={5} >
-                            <Link style={{"color": "#9d9d9d"}} to="/forum">계시판</Link>                   
+                            <Link style={{"color": "#9d9d9d"}} to="/old_forum">계시판</Link>
+                        </NavItem>
+                        <NavItem eventKey={6} href="/forum">
+                            New Forum
                         </NavItem>
                         <NavDropdown eventKey={3} title="More" id="basic-nav-dropdown">
                             <MenuItem eventKey={3.1}> Action

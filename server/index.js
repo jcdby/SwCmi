@@ -17,11 +17,19 @@ app.use(bodyParser.urlencoded({extended: true}));
 var FORUM_FILE = path.join(__dirname, 'forum.json');
 console.log("FORUM_FILE " + FORUM_FILE);
 
+
+
+app.use('/', express.static(path.join(rootDir, 'public')));
+
+//app.use(express.static('src/public'));
+app.use(express.static('./')); // what is this code for ?? @TODO
+
+
 // -------------- beginning Forum API
 
 
-app.get('/api/forum', function (req, res) {
-    console.log("get /api/forum");
+app.get('/api/old_forum', function (req, res) {
+    console.log("get /api/old_forum");
 
     fs.readFile(FORUM_FILE, function (err, data) {
         if (err) {
@@ -32,9 +40,9 @@ app.get('/api/forum', function (req, res) {
     });
 });
 
-app.get('/api/forum/:id', function (req, res) {
+app.get('/api/old_forum/:id', function (req, res) {
     var forum_id = req.params.id;
-    console.log("get /api/forum/:id with ID = " + forum_id);
+    console.log("get /api/old_forum/:id with ID = " + forum_id);
 
     fs.readFile(FORUM_FILE, function (err, data) {
         if (err) {
@@ -47,9 +55,9 @@ app.get('/api/forum/:id', function (req, res) {
     });
 });
 
-app.post('/api/forum/:id', function (req, res) {
+app.post('/api/old_forum/:id', function (req, res) {
     var forum_id = req.params.id;
-    console.log("post /api/forum/:id with ID = " + forum_id);
+    console.log("post /api/old_forum/:id with ID = " + forum_id);
 
     var author = req.body.author;
     var title = req.body.title;
@@ -113,12 +121,10 @@ function add_Post_ForumById(new_post, data, forum_id) {
 
 // -------------- end Forum API
 
-app.use('/', express.static(path.join(rootDir, 'public')));
-
-//app.use(express.static('src/public'));
-app.use(express.static('./')); // what is this code for ?? @TODO
 
 app.get('*', function (request, response) {
+    console.log('Request: [GET]', request.originalUrl);
+
     //response.sendFile(path.resolve(__dirname, 'src/public', 'index.html'))
     response.sendFile(path.resolve(path.join(rootDir, 'public'), 'index.html'))
 });

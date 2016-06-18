@@ -5,7 +5,8 @@ import {Button,ListGroup, ListGroupItem, Panel,Accordion} from 'react-bootstrap'
 import {Link} from 'react-router';
 
 
-export default class Forum_list extends React.Component {
+export default
+class OldForum_list extends React.Component {
 
 
     render() {
@@ -26,7 +27,7 @@ export default class Forum_list extends React.Component {
         return (
             <ListGroupItem  key={cat.id}>
                 <span className="category-name" >
-                    <Link to={'/forum/' + cat.id}>
+                    <Link to={'/old_forum/' + cat.id}>
                         <h2>
                             <em>Go to </em>
                             <strong > {cat.name} </strong>
@@ -44,12 +45,12 @@ export default class Forum_list extends React.Component {
                 </span>
             </ListGroupItem>
         )
-    };
+    }
 
+;
 
 
 }
-
 
 
 //

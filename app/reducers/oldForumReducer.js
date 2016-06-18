@@ -1,16 +1,11 @@
-/**
- * Created by fwavresky on 6/18/2016.
- */
-
-import * as types from '../components/actions/action-types'
+import * as types from '../components/actions/action-types';
 
 const initialForumState = {
-    forumList: [], // the objects have to be defined
-    forum: [],
-    topic: []
+    'categories': [],
+    'topic': {}  //@TODO: might be a complex object => needs [] instead of {}
 };
 
-const forumReducer = function(state = initialForumState, action = '') {
+const oldForumReducer = function (state = initialForumState, action = '') {
     switch (action.type) {
         case types.GET_FORUM_CATEGORIES_SUCCESS :
             var newState = Object.assign({}, state, {categories: action.categories});
@@ -26,4 +21,4 @@ const forumReducer = function(state = initialForumState, action = '') {
     return state;
 };
 
-export default initialForumReducer;
+export default oldForumReducer;
