@@ -21,6 +21,7 @@ class Header extends React.Component {
                                     수원 선교 교회
                                 </NavItem>
                             </LinkContainer>
+
                         </Navbar.Brand>
                     </Navbar.Header>
 
