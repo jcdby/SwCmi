@@ -1,5 +1,6 @@
 import React from 'react'
 import {ListGroup, ListGroupItem, Grid, Row, Col, Image, DropdownButton, MenuItem} from 'react-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap'
 
 export default
 class ForumList extends React.Component {
@@ -20,14 +21,35 @@ class ForumList extends React.Component {
                         Welcome to the Forum page. You can select a Forum, see the associated Topics and react to them.
                     </Col >
                     <Col md={2} mdOffset={1}>
-                        <DropdownButton title="Missionary Work" id="forum-naviguation">
-                            <MenuItem eventKey="1">General Discussion</MenuItem>
-                            <MenuItem eventKey="2">Worship</MenuItem>
-                            <MenuItem eventKey="3">Vacaton &amp; Family</MenuItem>
+                        <DropdownButton title="Go To Forum" id="forum-navigation">
+                            <LinkContainer to="/forum/missionary_work">
+                                <MenuItem eventKey="1">
+                                    Missionary Work
+                                </MenuItem>
+                            </LinkContainer>
+
+                            <LinkContainer to="/forum/general_discussion">
+                                <MenuItem eventKey="2">
+                                    General Discussion
+                                </MenuItem>
+                            </LinkContainer>
+
+                            <LinkContainer to="/forum/worship">
+                                <MenuItem eventKey="3">
+                                    Worship
+                                </MenuItem>
+                            </LinkContainer>
+
+                            <LinkContainer to="/forum/vacation_and_family">
+                                <MenuItem eventKey="4">
+                                    Vacation &amp; Family
+                                </MenuItem>
+                            </LinkContainer>
+
                         </DropdownButton>
                     </Col>
                 </Row>
-                <Row>
+                <Row className="content">
                     <Col  md={12}>
                         <ListGroup id="forum-list-container">
                             {this.displayForum('') /* normally a map function */}
