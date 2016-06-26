@@ -1,7 +1,7 @@
 import React from 'react'
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 import MainPage from '../components/containers/MainPage'
-import GalleryPage from '../components/containers/GalleryPage'
+import GalleryPage from '../components/containers/GalleryPageContainer'
 import MainLayout from '../components/layouts/MainLayout'
 
 

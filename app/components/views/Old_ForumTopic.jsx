@@ -8,6 +8,13 @@ import {Link} from 'react-router';
 
 export default class ForumTopic extends React.Component {
 
+    constructor(props){
+        super(props);
+        this.handleChangeName = this.handleChangeName.bind(this);
+        this.handleChangePost = this.handleChangePost.bind(this);
+        this.handleChangeTitle = this.handleChangeTitle.bind(this);
+    }
+
     render() {
         return (
             <ListGroupItem  key={this.props.topicProp.id}>
@@ -129,15 +136,15 @@ export default class ForumTopic extends React.Component {
         else return 'error';
     }
 
-    handleChangeName = (e) => {
+    handleChangeName(e) {
         this.props.setStateAuthorHandlerProp(e.target.value);
     };
 
-    handleChangeTitle = (e) => {
+    handleChangeTitle(e) {
         this.props.setStatePostTitleHandlerProp(e.target.value);
     };
 
-    handleChangePost = (e) => {
+    handleChangePost(e) {
         this.props.setStatePostTextHandlerProp(e.target.value);
     };
 

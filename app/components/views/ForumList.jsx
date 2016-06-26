@@ -3,6 +3,13 @@ import {ListGroup, ListGroupItem, Grid, Row, Col, Image, DropdownButton, MenuIte
 
 export default
 class ForumList extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.createForumList = this.createForumList.bind(this);
+        this.displayForum = this.displayForum.bind(this);
+    }
+
     render() {
         return (
             <div>
@@ -11,7 +18,7 @@ class ForumList extends React.Component {
         )
     }
 
-    createForumList = () => {
+    createForumList()  {
 
         return (
             <Grid>
@@ -40,7 +47,7 @@ class ForumList extends React.Component {
         )
     };
 
-    displayForum = (forumData) => {
+    displayForum(forumData) {
         return (
             <ListGroupItem className="forumList-forum">
 

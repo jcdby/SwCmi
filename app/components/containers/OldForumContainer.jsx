@@ -18,7 +18,7 @@ class OldForumContainer extends React.Component {
             });
     }
 
-    render = () => {
+    render() {
         return (
             <OldForum_list categoriesProp = {this.props.categories}/>
         )

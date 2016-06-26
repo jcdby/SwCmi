@@ -19,6 +19,11 @@ class OldForumTopicContainer extends React.Component {
             post_title: '',
             post_text: ''
         };
+
+        this.addPost = this.addPost.bind(this);
+        this.setStateAuthorHandler = this.setStateAuthorHandler.bind(this);
+        this.setStatePostTextHandler = this.setStatePostTextHandler.bind(this);
+        this.setStatePostTitleHandler = this.setStatePostTitleHandler.bind(this);
     }
 
     componentDidMount() {
@@ -49,7 +54,7 @@ class OldForumTopicContainer extends React.Component {
         )
     }
 
-    addPost = () => {
+    addPost() {
         var forumID = this.props.params.forumID;
 
         console.log('in addPost');
@@ -78,15 +83,15 @@ class OldForumTopicContainer extends React.Component {
             });
     };
 
-    setStateAuthorHandler = (author) => {
+    setStateAuthorHandler(author) {
         this.setState({author_name: author});
     };
 
-    setStatePostTitleHandler = (text) => {
+    setStatePostTitleHandler(text) {
         this.setState({post_title: text});
     };
 
-    setStatePostTextHandler = (text) => {
+    setStatePostTextHandler(text) {
         this.setState({post_text: text});
     };
 
