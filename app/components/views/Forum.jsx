@@ -89,9 +89,13 @@ class Forum extends React.Component {
             <ListGroupItem class="topic">
                 <Grid>
                     <Row className="topic">
-                        <Col md={3} className="topic-title">
+                        <Col md={4} className="topic-title">
                             <div>
-                                <h2> Israel and missionary work </h2>
+                                <LinkContainer to="/forum/missionary_work/israel_and_missionary_work">
+                                    <a>
+                                        <h3> Israel and missionary work </h3>
+                                    </a>
+                                </LinkContainer>
                             </div>
                             <div>
                                 <emp> Created by </emp>
@@ -99,7 +103,7 @@ class Forum extends React.Component {
                                 .
                             </div>
                         </Col>
-                        <Col md={9} className="topic-content">
+                        <Col md={8} className="topic-content">
                             <Row className="replies">
                                 <Col md={2}>
                                     <strong> 2 </strong>

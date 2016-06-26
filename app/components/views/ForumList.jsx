@@ -1,5 +1,5 @@
 import React from 'react'
-import {ListGroup, ListGroupItem, Grid, Row, Col, Image, DropdownButton, MenuItem} from 'react-bootstrap'
+import {ListGroup, ListGroupItem, Grid, Row, Col, Image, DropdownButton, MenuItem, Button} from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 
 export default
@@ -73,7 +73,11 @@ class ForumList extends React.Component {
                             <Image src="/assets/kittenjesus.jpg" thumbnail />
                         </Col>
                         <Col md={5}>
-                            <h2>Missionary Work</h2>
+                            <LinkContainer to="/forum/missionary_work">
+                                <a>
+                                    <h2>Missionary Work</h2>
+                                </a>
+                            </LinkContainer>
                             <span>
                                 A forum discussing missionary work in general.
                                 <br/>
@@ -91,15 +95,21 @@ class ForumList extends React.Component {
                         <Col md={10} mdOffset={2} >
                             <h3>Recent topics:</h3>
                             <ListGroup>
-                                <ListGroupItem className="topic">
-                                    Israel and missionary work
-                                </ListGroupItem>
-                                <ListGroupItem className="topic">
-                                    How to convert people, the book
-                                </ListGroupItem>
-                                <ListGroupItem className="topic">
-                                    How to become a missionary&#63; {/* the question mark */}
-                                </ListGroupItem>
+                                <LinkContainer to="/forum/missionary_work/israel_and_missionary_work">
+                                    <ListGroupItem className="topic">
+                                        Israel and missionary work
+                                    </ListGroupItem>
+                                </LinkContainer>
+                                <LinkContainer to="/forum/missionary_work/how_to_convert_people_the_book">
+                                    <ListGroupItem className="topic">
+                                        How to convert people, the book
+                                    </ListGroupItem>
+                                </LinkContainer>
+                                <LinkContainer to="/forum/missionary_work/how_to_become_a_missionary">
+                                    <ListGroupItem className="topic">
+                                        How to become a missionary&#63; {/* the question mark */}
+                                    </ListGroupItem>
+                                </LinkContainer>
                             </ListGroup>
                         </Col>
                     </Row>
