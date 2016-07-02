@@ -1,11 +1,9 @@
 import React from 'react';
-import Image from 'react-bootstrap/lib/Image'
 import { CSSGrid, SpringGrid, measureItems, makeResponsive, layout } from 'react-stonecutter';
-import Thumbnail from 'react-bootstrap/lib/Thumbnail';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import AutoResponsive from 'autoresponsive-react'
 
-const Grid = makeResponsive(measureItems(CSSGrid, { measureImages: true }), {
+
+const StoneCutterGrid = makeResponsive(measureItems(CSSGrid, { measureImages: true }), {
     maxWidth: 1920,
     minPadding: 100
 });
@@ -19,9 +17,8 @@ export default class Gallery extends React.Component {
 
 
     render() {
-        return (<div style={{ width: '80%', margin: 'auto', paddingTop: 20 }}>
-            <Grid
-                columns={5}
+        return (<div style={{ width: '80%', margin: 'auto', paddingTop: 20, paddingBottom: 50 }}>
+            <StoneCutterGrid
                 columnWidth={350}
                 gutterWidth={5}
                 gutterHeight={5}
@@ -42,7 +39,7 @@ export default class Gallery extends React.Component {
 
                 }) }
 
-            </Grid>
+            </StoneCutterGrid>
         </div>
 
         )

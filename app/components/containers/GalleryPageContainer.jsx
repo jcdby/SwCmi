@@ -11,16 +11,21 @@ import store from '../../store/Store'
 
    constructor(props){
      super(props)
+     this.state ={
+       skip: 0,
+       limit: 20
+     }
    }
 
   componentDidMount() {
-    store.dispatch(gallery_actions.fetchGalleryList());
+    store.dispatch(gallery_actions.fetchGalleryList(this.state));
+    window.addEventListener('scroll', () => {console.log('scrolling!! position is ' + window.pageYOffset + ' screenTop is ' + this.refs.mygallery.scrollHeight)} );
   }
 
   render() {
     return (
-      <div>
-        <Gallery galleryList={this.props.galleryList}></Gallery>
+      <div ref='mygallery'>
+        <Gallery  galleryList={this.props.galleryList}></Gallery>
       </div> 
     )
   }
