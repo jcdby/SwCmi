@@ -1,0 +1,15 @@
+#forum-list-container > .header {
+    margin-top: 15px;
+    bottom: 15px;
+}
+
+.card-forum {
+    margin-top: 2%;
+    margin-right: 2%;
+    border: thick;
+    border-color: #000000;
+}
+
+.card-forum h3 {
+    text-align: center;
+}

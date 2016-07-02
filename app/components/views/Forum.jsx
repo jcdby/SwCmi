@@ -7,6 +7,12 @@ import { LinkContainer } from 'react-router-bootstrap'
 
 export default
 class Forum extends React.Component {
+    constructor(props) {
+        super(props);
+        this.createForum = this.createForum.bind(this);
+        this.displayTopic = this.displayTopic.bind(this);
+    }
+
     render() {
         return (
             <div>
@@ -15,7 +21,7 @@ class Forum extends React.Component {
         )
     }
 
-    createForum = () => {
+    createForum () {
         return (
             <Grid>
                 <Row className="header">
@@ -82,9 +88,9 @@ class Forum extends React.Component {
                 </Row>
             </Grid>
         )
-    };
+    }
 
-    displayTopic = () => {
+    displayTopic () {
         return (
             <ListGroupItem class="topic">
                 <Grid>
@@ -122,7 +128,7 @@ class Forum extends React.Component {
                 </Grid>
             </ListGroupItem>
         )
-    };
+    }
 
 }
 

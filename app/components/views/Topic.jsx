@@ -8,6 +8,13 @@ import {Form,FormGroup, ControlLabel, FormControl, HelpBlock, Button} from 'reac
 
 export default
 class Topic extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.createTopic = this.createTopic.bind(this);
+        this.displayTopic = this.displayTopic.bind(this);
+    }
+
     render() {
         return (
             <div>
@@ -16,7 +23,7 @@ class Topic extends React.Component {
         )
     }
 
-    createTopic = () => {
+    createTopic () {
         return (
             <Grid>
                 <Row className="header">
@@ -72,7 +79,7 @@ class Topic extends React.Component {
         )
     };
 
-    displayTopic = () => {
+    displayTopic () {
         return (
             <ListGroupItem>
                 <Grid>
