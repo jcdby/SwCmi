@@ -27,7 +27,7 @@ module.exports = function (gulp) {
     var bundle_Index = function (file) {
         if (file) gutil.log('Recompiling ' + file);
         return bundler_Index
-            .transform("babelify", {presets: ["es2015", "stage-2", "react"]})
+            .transform("babelify", {presets: ["es2015", "stage-0", "react"]})
             .bundle()
             .on('error', gutil.log.bind(gutil, 'Browserify Error'))
             .pipe(source('bundle.js'))

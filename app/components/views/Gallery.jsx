@@ -1,11 +1,11 @@
 import React from 'react';
 import Image from 'react-bootstrap/lib/Image'
-import { CSSGrid,SpringGrid, measureItems, makeResponsive, layout } from 'react-stonecutter';
+import { CSSGrid, SpringGrid, measureItems, makeResponsive, layout } from 'react-stonecutter';
 import Thumbnail from 'react-bootstrap/lib/Thumbnail';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import AutoResponsive from 'autoresponsive-react'
 
-const Grid = makeResponsive(measureItems(CSSGrid), {
+const Grid = makeResponsive(measureItems(CSSGrid, { measureImages: true }), {
     maxWidth: 1920,
     minPadding: 100
 });
@@ -19,13 +19,10 @@ export default class Gallery extends React.Component {
 
 
     render() {
-        // let item = this.props.galleryList;
-        // console.log("rendered!")
-
-        return (
+        return (<div style={{ width: '80%', margin: 'auto', paddingTop: 20 }}>
             <Grid
                 columns={5}
-                columnWidth={310}
+                columnWidth={350}
                 gutterWidth={5}
                 gutterHeight={5}
                 layout={layout.pinterest}
@@ -33,8 +30,8 @@ export default class Gallery extends React.Component {
                 easing="ease-in"
                 >
                 {this.props.galleryList.map((item, index) => {
-                    return (<Card  >
-                        <CardMedia style={{ width: 300 }}>
+                    return (<Card>
+                        <CardMedia style={{ width: 350 }}>
                             <img src={"http://localhost:10000/" + item.file_name1} />
                         </CardMedia>
                         <CardTitle title={item.subject} subtitle="Card subtitle" />
@@ -46,6 +43,8 @@ export default class Gallery extends React.Component {
                 }) }
 
             </Grid>
+        </div>
+
         )
     }
 };
