@@ -1,12 +1,15 @@
 import React from 'react';
 import { CSSGrid, SpringGrid, measureItems, makeResponsive, layout } from 'react-stonecutter';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import AdvancedPagination from './AdvancedPagination'
 
 
-const StoneCutterGrid = makeResponsive(measureItems(CSSGrid, { measureImages: true }), {
+const StoneCutterGrid = makeResponsive(measureItems(SpringGrid, { measureImages: true }), {
     maxWidth: 1920,
     minPadding: 100
 });
+
+const DEFAULT_IMAG = "http://www.atmos.washington.edu/~carey/images/notFound.png"
 
 export default class Gallery extends React.Component {
 
@@ -15,9 +18,14 @@ export default class Gallery extends React.Component {
         super(props)
     }
 
+    handleImgError () {
+
+    }
+
 
     render() {
-        return (<div style={{ width: '80%', margin: 'auto', paddingTop: 20, paddingBottom: 50 }}>
+        return (<div style={{ position: 'relative', width: '80%', margin: 'auto', paddingTop: 20, paddingBottom: 50 }}>
+            <AdvancedPagination handleSelect={this.props.handleSelect} pageNo={this.props.count} ></AdvancedPagination>
             <StoneCutterGrid
                 columnWidth={350}
                 gutterWidth={5}
@@ -27,11 +35,12 @@ export default class Gallery extends React.Component {
                 easing="ease-in"
                 >
                 {this.props.galleryList.map((item, index) => {
-                    return (<Card>
+                    return (<Card >
                         <CardMedia style={{ width: 350 }}>
-                            <img src={"http://localhost:10000/" + item.file_name1} />
+                            <img  src={"http://localhost:10000/" + item.file_name1} onError={(e)=>{e.target.src=DEFAULT_IMG}}
+                            />
                         </CardMedia>
-                        <CardTitle title={item.subject} subtitle="Card subtitle" />
+                        <CardTitle title={item.subject} subtitle={item.name} />
                         <CardText>
                             {item.memo}
                         </CardText>
@@ -40,6 +49,7 @@ export default class Gallery extends React.Component {
                 }) }
 
             </StoneCutterGrid>
+
         </div>
 
         )
