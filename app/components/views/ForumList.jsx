@@ -3,41 +3,40 @@ import {ListGroup, ListGroupItem, Grid, Row, Col, Image, DropdownButton, MenuIte
 import {Nav, NavItem} from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 
+import ForumListItem from '../views/ForumListItem.jsx';
+
+import { CSSGrid, SpringGrid, measureItems, makeResponsive, layout } from 'react-stonecutter';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+
+const GridForum = makeResponsive(measureItems(CSSGrid, {measureImages: true}), {
+    maxWidth: 1920 * (10 / 12),
+    minPadding: 0
+});
+
+
 export default
 class ForumList extends React.Component {
 
     constructor(props) {
         super(props);
-        this.createForumList = this.createForumList.bind(this);
-        this.displayForum = this.displayForum.bind(this);
+        this.createGridForum = this.createGridForum.bind(this);
     }
 
     render() {
         return (
-            <div>
-            {   this.createForumList()   }
+            <div >
+            {   this.createGridForum()   }
             </div>
         )
     }
 
-    createForumList() {
+    createGridForum() {
         return (
             <Grid id="forum-list-container">
                 <Row className="header">
                     <h2>Church Forum</h2>
                 </Row>
                 <Row className="content">
-                    <Col  md={10}>
-                        <Grid>
-                            <Row>
-                                {this.displayForum('')}
-                                {this.displayForum('')}
-                                {this.displayForum('')}
-                                {this.displayForum('')}
-                                {this.displayForum('')}
-                            </Row>
-                        </Grid>
-                    </Col >
 
                     <Col md={2}>
 
@@ -68,20 +67,35 @@ class ForumList extends React.Component {
                         </Nav>
 
                     </Col>
+
+                    <Col  md={10}>
+                        <GridForum
+                            columnWidth={400}
+                            gutterWidth={5}
+                            gutterHeight={20}
+                            layout={layout.pinterest}
+                            duration={800}
+                            easing="ease-in">
+
+                            <Card style={{width: 350}}>
+                                <ForumListItem/>
+                            </Card>
+                            <Card style={{width: 350}}>
+                                <ForumListItem/>
+                            </Card>
+                            <Card style={{width: 350}}>
+                                <ForumListItem/>
+                            </Card>
+                            <Card style={{width: 350}}>
+                                <ForumListItem/>
+                            </Card>
+
+                        </GridForum>
+                    </Col >
+
+
                 </Row>
             </Grid>
-        )
-    }
-
-
-    displayForum(forumData) {
-        return (
-            <Col className="card-forum" md={4}>
-                <Col>
-                    <Image src="/assets/kittenjesus.jpg" thumbnail />
-                    <h3> Missionary Work </h3>
-                </Col>
-            </Col>
         )
     }
 }
