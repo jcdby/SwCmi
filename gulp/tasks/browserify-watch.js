@@ -38,6 +38,7 @@ module.exports = function (gulp) {
 
     var watchifyBundler = watchify(bundler_Index);
     watchifyBundler.on('update', bundle_Index);
+    watchifyBundler.on('log', function (msg) {gutil.log('Recompiled Successfully with ' + msg)});
 
 };
 
