@@ -1,4 +1,6 @@
 node_modules
+.flowconfig
+jsconfig.json
 public/bundle.js
-.idea
-.gitignore
+.vscode/launch.json
+.idea/*

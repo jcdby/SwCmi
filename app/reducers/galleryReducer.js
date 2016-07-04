@@ -1,23 +1,21 @@
+//@flow
 import { gallery_actions } from '../components/actions/action-types'
 
-const initialState = {
+
+
+const initialState: GalleryState = {
   gallery_list: [],
-  isFetching: false
+  isFetching: false,
+  count: 0
 }
 
-export default function galleryListReducer (state = initialState , action) {
+
+export default function galleryListReducer (state: GalleryState = initialState , action: any) {
   switch (action.type) {
     case gallery_actions.REQUEST_GALLERY_LIST:
-      console.log('requsted !')
-      // var newState = Object.assign({}, state, {isFetching: true})
-      var newState = {...state, isFetching: true}
-      return newState
-
+      return {...state, isFetching: true}
     case gallery_actions.RECEIVE_GALLERY_LIST:
-      // var newState = Object.assign({}, state, { gallery_list: action.gallery_list, isFetching: false})
-      var newState = {...state, gallery_list: action.gallery_list, isFetching: false}
-      return newState
-
+      return {...state, gallery_list: action.gallery_list, isFetching: false, count: action.count}
     default:
       return state
   }
