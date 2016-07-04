@@ -6,13 +6,14 @@ import NavDropdown from 'react-bootstrap/lib/NavDropdown'
 import MenuItem from 'react-bootstrap/lib/MenuItem'
 import { Link } from 'react-router'
 import { LinkContainer } from 'react-router-bootstrap'
+import LoginComponent from './LoginComponent'
 
 
 export default
-class Header extends React.Component {
+    class Header extends React.Component {
     render() {
         return (
-            <div style={{marginBottom: 50}}>
+            <div style={{ marginBottom: 50 }}>
                 <Navbar inverse fixedTop>
                     <Navbar.Header>
                         <Navbar.Brand>
@@ -63,6 +64,7 @@ class Header extends React.Component {
                             </MenuItem>
                         </NavDropdown>
                     </Nav>
+                    <LoginComponent></LoginComponent>                    
                 </Navbar>
             </div>
         )
