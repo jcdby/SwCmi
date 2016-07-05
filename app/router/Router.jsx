@@ -3,7 +3,7 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 import MainPage from '../components/containers/MainPage'
 import GalleryPage from '../components/containers/GalleryPageContainer'
 import MainLayout from '../components/layouts/MainLayout'
-
+import ForumLayout from '../components/layouts/ForumLayout'
 
 import Old_ForumContainer from '../components/containers/OldForumContainer'
 import Old_ForumTopicContainer from '../components/containers/OldForumTopicContainer'
@@ -23,7 +23,7 @@ class APPRouter extends React.Component {
                         <IndexRoute component={Old_ForumContainer} />
                         <Route path=":forumID" component={Old_ForumTopicContainer} />
                     </Route>
-                    <Route path="forum">
+                    <Route path="forum" component={ForumList}>
                         <IndexRoute component={ForumListContainer} />
                         <Route path=":forumID">
                             <IndexRoute component={ForumContainer} />

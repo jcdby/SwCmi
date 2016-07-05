@@ -4,3 +4,4 @@ jsconfig.json
 public/bundle.js
 .vscode/launch.json
 .idea/*
+.idea/workspace.xml
