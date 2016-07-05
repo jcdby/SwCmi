@@ -36,7 +36,7 @@ class LoginComponent extends Component {
   renderWhenNoLogined() {
     return (<Nav pullRight>
       <NavItem eventKey={1} href="#" onClick={this.handleSignIn} >SignUp</NavItem>
-        <NavItem eventKey={2} href="#" onClick={this.handleLogin} >Login</NavItem>        
+        <NavItem eventKey={2} href="#" onClick={this.handleLogin} >SignIn</NavItem>        
        </Nav> 
     )
   }

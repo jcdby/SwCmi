@@ -4,6 +4,13 @@ import ModalHeader from 'react-bootstrap/lib/ModalHeader'
 import ModalBody from 'react-bootstrap/lib/ModalBody'
 import ModalFooter from 'react-bootstrap/lib/ModalFooter'
 import Button from 'react-bootstrap/lib/Button';
+import Form from 'react-bootstrap/lib/Form';
+import FormGroup from 'react-bootstrap/lib/FormGroup';
+import Col from 'react-bootstrap/lib/Col';
+import ControlLabel from 'react-bootstrap/lib/ControlLabel';
+import FormControl from 'react-bootstrap/lib/FormControl';
+import Checkbox from 'react-bootstrap/lib/Checkbox';
+
 
 class LoginModal extends Component {
 
@@ -15,16 +22,52 @@ class LoginModal extends Component {
 
 
   }
-  
 
-  
+
+
 
   componentWillReceiveProps(nextProps) {
     this.setState({
       showModal: nextProps.showModal
     })
   }
-  
+
+  renderLogin() {
+    return (<Form horizontal action="/login">
+      <FormGroup controlId="formHorizontalEmail">
+        <Col componentClass={ControlLabel} sm={2}>
+          Email
+        </Col>
+        <Col sm={10}>
+          <FormControl type="email" placeholder="Email" name="email" />
+        </Col>
+      </FormGroup>
+
+      <FormGroup controlId="formHorizontalPassword">
+        <Col componentClass={ControlLabel} sm={2}>
+          Password
+        </Col>
+        <Col sm={10}>
+          <FormControl type="password" placeholder="Password" name="password" />
+        </Col>
+      </FormGroup>
+
+      <FormGroup>
+        <Col smOffset={2} sm={10}>
+          <Checkbox>Remember me</Checkbox>
+        </Col>
+      </FormGroup>
+
+      <FormGroup>
+        <Col smOffset={2} sm={10}>
+          <Button type="submit">
+            Sign in
+          </Button>
+        </Col>
+      </FormGroup>
+    </Form>)
+  }
+
 
   render() {
     return (
@@ -34,7 +77,7 @@ class LoginModal extends Component {
             <Modal.Title>Modal heading</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <p>Login Modal</p>
+            {this.renderLogin()}
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.props.closeModal}>Close</Button>
