@@ -60,7 +60,43 @@ class LoginModal extends Component {
 
       <FormGroup>
         <Col smOffset={2} sm={10}>
-          <Button type="submit">
+          <Button>
+            Sign in
+          </Button>
+        </Col>
+      </FormGroup>
+    </Form>)
+  }
+
+  renderSignUp() {
+    return (<Form horizontal action="/login">
+      <FormGroup controlId="formHorizontalEmail">
+        <Col componentClass={ControlLabel} sm={2}>
+          Email
+        </Col>
+        <Col sm={10}>
+          <FormControl type="email" placeholder="Email" name="email" />
+        </Col>
+      </FormGroup>
+
+      <FormGroup controlId="formHorizontalPassword">
+        <Col componentClass={ControlLabel} sm={2}>
+          Password
+        </Col>
+        <Col sm={10}>
+          <FormControl type="password" placeholder="Password" name="password" />
+        </Col>
+      </FormGroup>
+
+      <FormGroup>
+        <Col smOffset={2} sm={10}>
+          <Checkbox>Remember me</Checkbox>
+        </Col>
+      </FormGroup>
+
+      <FormGroup>
+        <Col smOffset={2} sm={10}>
+          <Button>
             Sign in
           </Button>
         </Col>

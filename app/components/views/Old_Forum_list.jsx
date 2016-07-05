@@ -17,7 +17,7 @@ class OldForum_list extends React.Component {
                          return (
                              this.displayCategory(category)
                          )
-                     })}
+                     })} 
                 </ListGroup>
             </div>
         )
