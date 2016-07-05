@@ -8,15 +8,17 @@ class LoginComponent extends Component {
     this.state = {
       logined: false
     }
+    this.handleLogin = this.handleLogin.bind(this);
+    this.handleSignIn = this.handleSignIn.bind(this);
   }
 
 
   handleLogin() {
-
+    this.props.clickLogin()
   }
 
   handleSignIn() {
-
+    this.props.clickLogin()
   }
 
   handleLogout() {
@@ -27,14 +29,14 @@ class LoginComponent extends Component {
     return (
       <Nav pullRight>
      <NavItem eventKey={1} href="#" onClick={() => {this.setState({logined: false})}} >UserName:{this.props.username + ' Logout'} </NavItem>
-     </Nav> 
+     </Nav>
     )
   }
 
   renderWhenNoLogined() {
     return (<Nav pullRight>
-      <NavItem eventKey={1} href="#" onClick={() => {this.setState({logined: true})}} >SignUp</NavItem>
-        <NavItem eventKey={2} href="#" onClick={() => {this.setState({logined: true})}} >Login</NavItem>        
+      <NavItem eventKey={1} href="#" onClick={this.handleSignIn} >SignUp</NavItem>
+        <NavItem eventKey={2} href="#" onClick={this.handleLogin} >Login</NavItem>        
        </Nav> 
     )
   }

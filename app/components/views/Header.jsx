@@ -64,7 +64,7 @@ export default
                             </MenuItem>
                         </NavDropdown>
                     </Nav>
-                    <LoginComponent></LoginComponent>                    
+                    <LoginComponent clickLogin={this.props.clickLogin}></LoginComponent>                    
                 </Navbar>
             </div>
         )
