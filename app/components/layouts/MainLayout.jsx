@@ -1,5 +1,4 @@
 import React from 'react'
-//import Header from './../components//Header'
 import Header from '../views/Header'
 import { Footer } from 'rebass'
 import LoginModal from '../views/LoginModal'

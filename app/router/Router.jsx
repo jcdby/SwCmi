@@ -4,7 +4,7 @@ import MainPage from '../components/containers/MainPage'
 import GalleryPage from '../components/containers/GalleryPageContainer'
 import MainLayout from '../components/layouts/MainLayout'
 import ForumLayout from '../components/layouts/ForumLayout'
-
+import ForumList from '../components/views/ForumList'
 import Old_ForumContainer from '../components/containers/OldForumContainer'
 import Old_ForumTopicContainer from '../components/containers/OldForumTopicContainer'
 import ForumListContainer from '../components/containers/ForumListContainer'
