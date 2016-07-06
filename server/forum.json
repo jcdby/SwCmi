@@ -1,118 +1,73 @@
 [
   {
     "id": 1,
-    "name": "Redux gotcha",
-    "description": "For anything related to Redux tricks",
+    "state": "missionary_work",
+    "title": "Missionary Work",
+    "subtitle": "Missionary Work in general",
+    "author": "Jincheng",
+    "description": "A forum discussing missionary work in general. 3 Topics are discussed in Missionary Work. You can also find more about the missions of our members oversea.",
     "posts": "3",
     "active": "2016-06-09-10:20:40",
     "posts_list": [
       {
         "post_id": 1,
-        "title": "User actions",
+        "title": "Israel and missionary work",
         "author": "Francois",
-        "content": "Seems like a lot of boilerplate"
+        "content": "What are the specificities  of Israel as a missionary land? Since this is the only Jewish country in the world, with a large muslim minority, how would you approach the missionary work?         What is the percentage of Christians there?"
       },
       {
         "post_id": 2,
         "title": "Reducers",
         "author": "Francois",
-        "content": "They are useful for sure."
+        "content": "They are useful for sure. But for religion, I'm not sure... That's an open question, I'd say."
       },
       {
         "post_id": 3,
         "title": "Flux",
         "author": "Simon",
-        "content": "What other design could be suitable? Maybe there is something simpler than redux.."
-      },
-      {
-        "post_id": 1465995701125,
-        "title": "1231231",
-        "author": "123123",
-        "content": "231231231231232313123123"
-      },
-      {
-        "post_id": 1466078271231,
-        "title": "Je suis un poulet",
-        "author": "Dung",
-        "content": "J aime les poules ca c est bien vrai yeah"
-      },
-      {
-        "post_id": 1466234999518,
-        "title": "the title goes here",
-        "author": "here goes anytoer test",
-        "content": "salut c est monm psote this is just a simple ems"
-      },
-      {
-        "post_id": 1466834281999,
-        "title": "werwer",
-        "author": "rwerwerwerwer",
-        "content": "werwer3234234242334"
+        "content": "What other design could be suitable? Maybe there is something simpler than redux.. And I have a problem with this car image. Is it appropriate?"
       }
     ]
   },
   {
     "id": 2,
-    "name": "Travelling",
-    "description": "Where will you go next?",
+    "state": "general_discussion",
+    "title": "General discussion",
+    "subtitle": "About anything and everything",
+    "author": "Francois",
+    "description": "This is meant to exchange about trivial topics.",
     "posts": "2",
-    "active": "2016-06-05-05:30:01",
+    "active": "2016-07-09-10:20:40",
     "posts_list": [
       {
         "post_id": 1,
-        "title": "Sao Paulo",
-        "author": "JC",
-        "content": "They have a nice statue"
+        "title": "What is the best Samgyeopsal place in Korea????",
+        "author": "Francois",
+        "content": "I am hungry. I like the Samgyeopsal from Jeju. This is divine."
       },
       {
         "post_id": 2,
-        "title": "Czech",
+        "title": "Camping",
         "author": "Simon",
-        "content": "They have a nice river"
-      },
-      {
-        "post_id": 1465990403470,
-        "title": "fjdj",
-        "author": "fjd",
-        "content": "djfdfk"
-      },
-      {
-        "post_id": 1465990653363,
-        "title": "123123",
-        "author": "123123",
-        "content": "123123123"
-      },
-      {
-        "post_id": 1465990701250,
-        "title": "123123123",
-        "author": "12312312",
-        "content": "123123123123123"
-      },
-      {
-        "post_id": 1465990811158,
-        "title": "adsfadsfasdf",
-        "author": "fasdf",
-        "content": "adsfadsfasdfasdfasdffasdfasdf"
-      },
-      {
-        "post_id": 1465995490614,
-        "title": "123123",
-        "author": "123123",
-        "content": "123123123"
+        "content": "I am looking for a tent that could host 10 people at once. It is a plus if it has air con and the bible written in czech, but i'll be fine with the regular barbecue-equiped model as well"
       }
     ]
   },
   {
     "id": 3,
-    "name": "Studying Angular 2",
-    "description": "For anything related to  Angular 2 studies",
+    "state": "worship",
+    "title": "Worship",
+    "subtitle": "Worshiping schedules and activities",
+    "author": "Francois",
+    "description": "This is meant to exchange about trivial topics.",
     "posts": "1",
-    "active": "2016-06-09-15:30:00",
+    "active": "2016-07-09-10:20:40",
     "posts_list": [
       {
         "post_id": 1,
-        "title": "When will be the final version released???",
-        "author": "JC",
-        "content": "I have been waiting for this for a long long time now. I like TyepScript. I hope it will be great."
+        "title": "Sunday regular meetings schedule",
+        "author": "Francois",
+        "content": "Worship: 10am. Study: 1pm. Gospel training: 5pm. Each activity lasts for one hour."
       }
     ]
   }

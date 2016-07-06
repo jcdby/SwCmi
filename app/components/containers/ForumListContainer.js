@@ -7,15 +7,26 @@ import store from '../../store/Store'
 import {connect} from 'react-redux'
 import ForumList from '../views/ForumList.jsx'
 
-export default
+import axios from 'axios'
+import {getForumListSuccess} from '../actions/forum-actions';
+
 class ForumListContainer extends React.Component {
     componentDidMount() {
+        axios.get('/api/forumList')
+            .then(res => {
+                console.log('api called front end');
+                store.dispatch(getForumListSuccess(res.data));
+                return res;
+            })
+            .catch(function (err) {
+                console.error('API call error', '/api/forumList', err);
+            });
     }
 
     render() {
         return (
             <div>
-                <ForumList/>
+                <ForumList forumListProps = {this.props.forumList}/>
             </div>
         )
     }
@@ -23,7 +34,7 @@ class ForumListContainer extends React.Component {
 
 const mapStateToStore = function (store) {
     return {
-        //forumList: store.forumListState.forumList
+        forumList: store.forumState.forumList
     }
 };
 

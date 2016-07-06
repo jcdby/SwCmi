@@ -23,7 +23,7 @@ class APPRouter extends React.Component {
                         <IndexRoute component={Old_ForumContainer} />
                         <Route path=":forumID" component={Old_ForumTopicContainer} />
                     </Route>
-                    <Route path="forum" component={ForumList}>
+                    <Route path="forum" component={ForumLayout}>
                         <IndexRoute component={ForumListContainer} />
                         <Route path=":forumID">
                             <IndexRoute component={ForumContainer} />

@@ -1,22 +1,50 @@
-import * as types from './action-types';
+import { forum_actions } from './action-types'
 
-export function getForumCategoriesSuccess(categories) {
+export function getForumListSuccess(forumList) {
     return {
-        type: types.GET_FORUM_CATEGORIES_SUCCESS,
-        categories
+        type: forum_actions.GET_FORUM_LIST_SUCCESS,
+        forumList
     };
 }
 
-export function getForumTopicSuccess(topic) {
+export function getForumSuccess(forum) {
     return {
-        type: types.GET_FORUM_TOPIC_SUCCESS,
+        type: forum_actions.GET_FORUM_SUCCESS,
+        forum
+    };
+}
+
+export function setForumSuccess(forum) {
+    return {
+        type: forum_actions.POST_FORUM_SUCCESS,
+        forum
+    };
+}
+
+export function getTopicSuccess(topic) {
+    return {
+        type: forum_actions.GET_TOPIC_SUCCESS,
         topic
     };
 }
 
-export function setForumTopicSuccess(topic) {
+export function setTopicSuccess(topic) {
     return {
-        type: types.POST_FORUM_TOPIC_SUCCESS,
+        type: forum_actions.POST_TOPIC_SUCCESS,
         topic
     };
+}
+
+export function getPostSuccess(post) {
+    return {
+        type:forum_actions.GET_POST_SUCCESS,
+        post
+    }
+}
+
+export function setPostSuccess(post) {
+    return {
+        type:forum_actions.POST_POST_SUCCESS,
+        post
+    }
 }

@@ -27,7 +27,7 @@ class OldForumContainer extends React.Component {
 
 const mapStateToStore = function (store) {
     return {
-        categories: store.oldForumState.categories
+        categories: store.forumState.categories
     };
 };
 

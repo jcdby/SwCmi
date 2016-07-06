@@ -1,11 +1,8 @@
 import React from 'react'
 var classNames = require('classnames');
 
-//import { CSSGrid, SpringGrid, measureItems, makeResponsive, layout } from 'react-stonecutter';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-
-import {ListGroup, ListGroupItem, Grid, Row, Col, Image, DropdownButton, MenuItem, Button} from 'react-bootstrap'
-import {Nav, NavItem} from 'react-bootstrap'
+import { CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import {ListGroup, ListGroupItem, Image, Button} from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 
 export default
@@ -56,11 +53,13 @@ class ForumListItem extends React.Component {
     render() {
         var imageClasses = this.getImageClasses();
         var detailsClasses = this.getDetailsClasses();
+
+        var forum = this.props.forumProp;
         return (
             <span onMouseOut ={this.onMouseOut} onMouseOver ={this.onMouseOver}>
-                <LinkContainer to="/forum/missionary_work">
+                <LinkContainer to={'/forum/' + forum.state}>
                     <a>
-                        <CardTitle title="Missionary Work" subtitle="Missionary work in general" />
+                        <CardTitle title={forum.title} subtitle={forum.subtitle} />
                     </a>
                 </LinkContainer>
 
@@ -73,15 +72,18 @@ class ForumListItem extends React.Component {
 
                 <CardText className={detailsClasses}  style={{height: 500}} >
                     <span>
-                        A forum discussing missionary work in general.
-                        3 Topics are discussed in Missionary Work.
-                        <br/>
-                        You can also find more about the missions of our members oversea.
+                          {forum.description}
                     </span>
 
                     <br/>
-                    <emp> Last Post: June 9th, 2016 at 13:15 by</emp>
-                    <strong> Jincheng</strong>
+                    <emp> Last Post: {forum.active} by</emp>
+                    <strong> {forum.author}</strong>
+                    <br/>
+
+                    <br/>
+                    <emp> There are </emp>
+                    <strong> {forum.posts}</strong>
+                    <emp> posts in this forum </emp>
                     <br/>
 
                     <h3>Recent topics:</h3>
@@ -103,7 +105,7 @@ class ForumListItem extends React.Component {
                         </LinkContainer>
                     </ListGroup>
 
-                    <LinkContainer to="/forum/missionary_work">
+                    <LinkContainer to={'/forum/' + forum.state}>
                         <Button bsStyle="primary" bsSize="large" block>Go to Forum</Button>
                     </LinkContainer>
                 </CardText>

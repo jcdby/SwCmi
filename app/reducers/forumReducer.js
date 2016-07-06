@@ -2,28 +2,43 @@
  * Created by fwavresky on 6/18/2016.
  */
 
-import * as types from '../components/actions/action-types'
+import { forum_actions } from '../components/actions/action-types'
 
 const initialForumState = {
-    forumList: [], // the objects have to be defined
-    forum: [],
-    topic: []
+    'forumList': [], // the objects have to be defined
+    'active_forum': [],
+    'active_topics': [],
+    'active_posts': []
 };
 
-const forumReducer = function(state = initialForumState, action = '') {
+const forumReducer = function (state = initialForumState, action = '') {
+
     switch (action.type) {
-        case types.GET_FORUM_CATEGORIES_SUCCESS :
-            var newState = Object.assign({}, state, {categories: action.categories});
+        case forum_actions.GET_FORUM_LIST_SUCCESS :
+            var newState = Object.assign({}, state, {forumList: action.forumList});
             return newState;
-        case types.GET_FORUM_TOPIC_SUCCESS :
-            var newState = Object.assign({}, state, {topic: action.topic});
+        case forum_actions.GET_FORUM_SUCCESS :
+            var newState = Object.assign({}, state, {active_forum: action.forum});
             return newState;
-        case types.POST_FORUM_TOPIC_SUCCESS :
-            var newState = Object.assign({}, state, {topic: action.topic});
+        case forum_actions.POST_FORUM_SUCCESS :
+            var newState = Object.assign({}, state, {active_forum: action.topic});
             return newState;
+        case forum_actions.GET_TOPIC_SUCCESS :
+            var newState = Object.assign({}, state, {active_topics: action.topic});
+            return newState;
+        case forum_actions.POST_TOPIC_SUCCESS :
+            var newState = Object.assign({}, state, {active_topics: action.topic});
+            return newState;
+        case forum_actions.GET_POST_SUCCESS :
+            var newState = Object.assign({}, state, {active_posts: action.post});
+            return newState;
+        case forum_actions.POST_POST_SUCCESS :
+            var newState = Object.assign({}, state, {active_posts: action.post});
+            return newState;
+        default:  return state;
     }
 
-    return state;
+
 };
 
 export default forumReducer;

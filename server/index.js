@@ -28,6 +28,21 @@ app.use(express.static('./')); // what is this code for ?? @TODO
 // -------------- beginning Forum API
 
 
+
+
+app.get('/api/forumList', function (req, res) {
+    console.log("get /api/forumList");
+
+    fs.readFile(FORUM_FILE, function (err, data) {
+        if (err) {
+            console.error(err);
+            process.exit(1);
+        }
+        res.json(JSON.parse(data));
+    });
+});
+
+
 app.get('/api/old_forum', function (req, res) {
     console.log("get /api/old_forum");
 
