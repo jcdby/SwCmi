@@ -1,4 +1,4 @@
-import * as types from '../components/actions/action-types';
+import { old_forum_actions } from '../components/actions/action-types'
 
 const initialForumState = {
     'categories': [],
@@ -7,18 +7,18 @@ const initialForumState = {
 
 const oldForumReducer = function (state = initialForumState, action = '') {
     switch (action.type) {
-        case types.GET_FORUM_CATEGORIES_SUCCESS :
+        case old_forum_actions.GET_FORUM_CATEGORIES_SUCCESS :
             var newState = Object.assign({}, state, {categories: action.categories});
             return newState;
-        case types.GET_FORUM_TOPIC_SUCCESS :
+        case old_forum_actions.GET_FORUM_TOPIC_SUCCESS :
             var newState = Object.assign({}, state, {topic: action.topic});
             return newState;
-        case types.POST_FORUM_TOPIC_SUCCESS :
+        case old_forum_actions.POST_FORUM_TOPIC_SUCCESS :
             var newState = Object.assign({}, state, {topic: action.topic});
             return newState;
+        default:
+            return state;
     }
-
-    return state;
 };
 
 export default oldForumReducer;

@@ -12,7 +12,6 @@ const initialForumState = {
 };
 
 const forumReducer = function (state = initialForumState, action = '') {
-
     switch (action.type) {
         case forum_actions.GET_FORUM_LIST_SUCCESS :
             var newState = Object.assign({}, state, {forumList: action.forumList});
@@ -37,8 +36,6 @@ const forumReducer = function (state = initialForumState, action = '') {
             return newState;
         default:  return state;
     }
-
-
 };
 
 export default forumReducer;

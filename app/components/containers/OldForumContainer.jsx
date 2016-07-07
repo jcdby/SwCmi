@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import {getForumCategoriesSuccess} from '../actions/forum-actions';
+import {getForumCategoriesSuccess} from '../actions/oldForum-actions';
 import {connect} from 'react-redux';
 import store from '../../store/Store';
 import OldForum_list from '../views/Old_Forum_list.jsx';
@@ -12,10 +12,10 @@ class OldForumContainer extends React.Component {
                 console.log('api called front end');
                 store.dispatch(getForumCategoriesSuccess(res.data));
                 return res;
-            })
-            .catch(function (err) {
-                console.error('API call error', '/api/oldForum', err);
             });
+            //.catch(function (err) {
+            //    console.error('API call error', '/api/oldForum', err);
+            //});
     }
 
     render() {
@@ -27,7 +27,7 @@ class OldForumContainer extends React.Component {
 
 const mapStateToStore = function (store) {
     return {
-        categories: store.forumState.categories
+        categories: store.oldForumState.categories
     };
 };
 

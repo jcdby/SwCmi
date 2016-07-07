@@ -31,7 +31,7 @@ export default class ForumTopic extends React.Component {
             <span>
                 <span className="topic-name" >
                     <h2>
-                        <strong > {topic.name} </strong>
+                        <strong > {topic.title} </strong>
                     </h2>
                     <span className="topic-description">
                         <em>{topic.description} </em>
@@ -50,7 +50,6 @@ export default class ForumTopic extends React.Component {
                     })
                         : <div>No posts on this topic. Be the first !</div>  }
                 </div>
-
 
                 <form>
                     <FormGroup
@@ -94,7 +93,6 @@ export default class ForumTopic extends React.Component {
             </span>
         )
     }
-
 
     createPost(post) {
         return (

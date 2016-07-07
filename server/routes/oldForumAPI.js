@@ -6,21 +6,10 @@ var router = express.Router();
 var fs = require('fs');
 var path = require('path');
 var FORUM_FILE = path.join(__dirname, '..', 'data', 'forum.json');
+
 console.log("FORUM_FILE " + FORUM_FILE);
 
-router.get('/api/old_forum', function (req, res) {
-    console.log("get /api/old_forum");
-
-    fs.readFile(FORUM_FILE, function (err, data) {
-        if (err) {
-            console.error(err);
-            process.exit(1);
-        }
-        res.json(JSON.parse(data));
-    });
-});
-
-router.get('/api/old_forum/:id', function (req, res) {
+router.get('/:id', function (req, res) {
     var forum_id = req.params.id;
     console.log("get /api/old_forum/:id with ID = " + forum_id);
 
@@ -35,7 +24,19 @@ router.get('/api/old_forum/:id', function (req, res) {
     });
 });
 
-router.post('/api/old_forum/:id', function (req, res) {
+router.get('/', function (req, res) {
+    console.log("get /api/old_forum");
+
+    fs.readFile(FORUM_FILE, function (err, data) {
+        if (err) {
+            console.error(err);
+            process.exit(1);
+        }
+        res.json(JSON.parse(data));
+    });
+});
+
+router.post('/:id', function (req, res) {
     var forum_id = req.params.id;
     console.log("post /api/old_forum/:id with ID = " + forum_id);
 
@@ -53,18 +54,19 @@ router.post('/api/old_forum/:id', function (req, res) {
 
     console.log("new_post added: " + JSON.stringify(new_post));
 
-    fs.readFile(FORUM_FILE, function (err, data) {
+    fs.readFile(FORUM_FILE, function (err, forumsData) {
         if (err) {
             console.error(err);
             process.exit(1);
         }
-        var forum_topic = getById(forum_id, data)[0];
+        var forum_topic = getById(forum_id, forumsData)[0];
         forum_topic.posts_list.push(new_post);
 
-        var forums_array = add_Post_ForumById(new_post, data, forum_id);
+        var updated_forums = add_Post_in_Forum_ById(new_post, forumsData, forum_id);
 
         // rewrite the whole JSON file to update the changes
-        fs.writeFile(FORUM_FILE, JSON.stringify(forums_array), function (err, data) {
+        //fs.writeFile(FORUM_FILE, JSON.stringify(forums_array), function (err, data) {
+        fs.writeFile(FORUM_FILE, JSON.stringify(updated_forums), function (err) {
             if (err) {
                 console.error(err);
                 process.exit(1);
@@ -85,8 +87,8 @@ function getById(id, data) {
     );
 }
 
-function add_Post_ForumById(new_post, data, forum_id) {
-    var forums_array = JSON.parse(data);
+function add_Post_in_Forum_ById(new_post, forumsData, forum_id) {
+    var forums_array = JSON.parse(forumsData);
     forums_array.filter(
         function (data) {
             if (data.id == forum_id) {

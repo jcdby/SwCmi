@@ -3,12 +3,11 @@ import axios from 'axios'
 import {connect} from 'react-redux'
 
 import store from '../../store/Store'
-import {getForumTopicSuccess, setForumTopicSuccess} from '../actions/forum-actions'
+import {getForumTopicSuccess, setForumTopicSuccess} from '../actions/oldForum-actions';
 
 import OldForumTopic from '../views/Old_ForumTopic.jsx'
 
 class OldForumTopicContainer extends React.Component {
-
 
     constructor(props) {
         super(props);
@@ -34,10 +33,10 @@ class OldForumTopicContainer extends React.Component {
             .then((res) => {
                 store.dispatch(getForumTopicSuccess(res.data));
                 return res;
-            })
-            .catch((err) => {
-                console.error('API call error', '/api/old_forum/' + forumID, err);
-            })
+            });
+            //.catch((err) => {
+            //    console.error('API call error', '/api/old_forum/' + forumID, err);
+            //})
     }
 
     render() {
@@ -77,10 +76,10 @@ class OldForumTopicContainer extends React.Component {
                 this.setState({post_title: ''});
                 this.setState({post_text: ''});
                 return res;
-            })
-            .catch((err) => {
-                console.error('API POST call error', '/api/old_forum/' + forumID, err);
             });
+            //.catch((err) => {
+            //    console.error('API POST call error', '/api/old_forum/' + forumID, err);
+            //});
     };
 
     setStateAuthorHandler(author) {
@@ -94,7 +93,6 @@ class OldForumTopicContainer extends React.Component {
     setStatePostTextHandler(text) {
         this.setState({post_text: text});
     };
-
 
 }
 
