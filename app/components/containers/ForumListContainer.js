@@ -12,14 +12,14 @@ import {getForumListSuccess} from '../actions/forum-actions';
 
 class ForumListContainer extends React.Component {
     componentDidMount() {
-        axios.get('/api/forumList')
+        axios.get('/api/forum/forumList')
             .then(res => {
                 console.log('api called front end');
                 store.dispatch(getForumListSuccess(res.data));
                 return res;
             })
             .catch(function (err) {
-                console.error('API call error', '/api/forumList', err);
+                console.error('API call error', '/api/forum/forumList', err);
             });
     }
 

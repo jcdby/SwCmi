@@ -5,8 +5,8 @@ var watchify = require('watchify')
 var path = require('path')
 var rootDir = require('../util/get-root-dir')()
 var rename = require('gulp-rename')
-var streamify = require('gulp-streamify');
-var uglify = require('gulp-uglify');
+//var streamify = require('gulp-streamify');
+//var uglify = require('gulp-uglify');
 
 module.exports = function (gulp) {
   var destFolder = path.join(rootDir, 'public')
@@ -31,7 +31,7 @@ module.exports = function (gulp) {
       .bundle()
       .on('error', gutil.log.bind(gutil, 'Browserify Error'))
       .pipe(source('index.js'))
-      .pipe(streamify(uglify()))
+      //.pipe(streamify(uglify()))
       .pipe(rename('bundle.js'))
       .pipe(gulp.dest(destFolder))
   }
