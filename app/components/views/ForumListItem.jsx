@@ -81,28 +81,46 @@ class ForumListItem extends React.Component {
                     <br/>
 
                     <br/>
-                    <emp> There are </emp>
-                    <strong> {forum.posts}</strong>
-                    <emp> posts in this forum </emp>
+
+                {(() => {
+                    switch (forum.topics_list.length) {
+                        case 0:
+                            return (
+                                <span>
+                                    <emp> There are no topics discussed in this forum. Be the first to create one! </emp>
+                                </span>
+                            );
+                        case 1:
+                            return (<span>
+                                <emp> There is </emp>
+                                <strong> {forum.topics_list.length}</strong>
+                                <emp> topic discussed in this forum </emp>
+                            </span>
+                            );
+                        default:
+                            return (
+                                <span>
+                                    <emp> There are </emp>
+                                    <strong> {forum.topics_list.length}</strong>
+                                    <emp> topics discussed in this forum </emp>
+                                </span>
+                            );
+                    }
+                })()}
+
                     <br/>
 
                     <h3>Recent topics:</h3>
                     <ListGroup>
-                        <LinkContainer to="/forum/missionary_work/israel_and_missionary_work">
-                            <ListGroupItem className="topic">
-                                Israel and missionary work
-                            </ListGroupItem>
-                        </LinkContainer>
-                        <LinkContainer to="/forum/missionary_work/how_to_convert_people_the_book">
-                            <ListGroupItem className="topic">
-                                How to convert people, the book
-                            </ListGroupItem>
-                        </LinkContainer>
-                        <LinkContainer to="/forum/missionary_work/how_to_become_a_missionary">
-                            <ListGroupItem className="topic">
-                                How to become a missionary&#63; {/* the question mark */}
-                            </ListGroupItem>
-                        </LinkContainer>
+                    {forum.topics_list.map((topic, index) => {
+                        return (
+                            <LinkContainer key={index} to={'/forum/' + forum.state + '/' + topic.state}>
+                                <ListGroupItem className="topic">
+                                   {topic.title}
+                                </ListGroupItem>
+                            </LinkContainer>
+                        )
+                    })}
                     </ListGroup>
 
                     <LinkContainer to={'/forum/' + forum.state}>

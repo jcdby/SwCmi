@@ -6,7 +6,8 @@ var router = express.Router();
 var path = require('path');
 var fs = require('fs');
 
-var FORUM_FILE = path.join(__dirname, '..', 'data', 'forum.json');
+//var FORUM_FILE = path.join(__dirname, '..', 'data', 'forum.json');
+var FORUM_FILE = path.join(__dirname, '..', 'data', 'forumList.json');
 console.log("FORUM_FILE " + FORUM_FILE);
 
 router.get('/forumList', function (req, res) {
