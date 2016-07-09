@@ -1,14 +1,11 @@
 //@flow
-import { gallery_actions } from '../components/actions/action-types'
-
-
+import { gallery_actions } from '../actions/action-types'
 
 const initialState: GalleryState = {
   gallery_list: [],
   isFetching: false,
   count: 0
-}
-
+};
 
 export default function galleryListReducer (state: GalleryState = initialState , action: any) {
   switch (action.type) {

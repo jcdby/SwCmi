@@ -4,7 +4,7 @@ import {ListGroup, ListGroupItem, Panel,Accordion} from 'react-bootstrap';
 import {Link} from 'react-router';
 
 export default
-class OldForum_list extends React.Component {
+class Old_ForumListView extends React.Component {
 
     render() {
         return (

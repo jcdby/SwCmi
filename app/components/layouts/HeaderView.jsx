@@ -10,7 +10,7 @@ import LoginComponent from './LoginComponent'
 
 
 export default
-    class Header extends React.Component {
+    class HeaderView extends React.Component {
     render() {
         return (
             <div style={{ marginBottom: 50 }}>

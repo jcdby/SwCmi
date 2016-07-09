@@ -6,7 +6,7 @@ import { LinkContainer } from 'react-router-bootstrap'
 
 
 export default
-class Forum extends React.Component {
+class ForumView extends React.Component {
     constructor(props) {
         super(props);
         this.createForum = this.createForum.bind(this);

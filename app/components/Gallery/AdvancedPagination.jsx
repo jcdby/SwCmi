@@ -7,7 +7,7 @@ class AdvancedPagination extends Component {
     super(props);
     this.state = {
       activePage: 1
-    }
+    };
     this.handleSelect = this.handleSelect.bind(this);
   }
 

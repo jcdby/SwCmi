@@ -7,7 +7,7 @@ import {Grid, Row, Col, ListGroup, ListGroupItem, Image} from 'react-bootstrap'
 import {Form,FormGroup, ControlLabel, FormControl, HelpBlock, Button} from 'react-bootstrap'
 
 export default
-class Topic extends React.Component {
+class TopicView extends React.Component {
 
     constructor(props) {
         super(props);

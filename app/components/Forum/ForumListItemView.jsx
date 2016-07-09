@@ -6,7 +6,7 @@ import {ListGroup, ListGroupItem, Image, Button} from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 
 export default
-class ForumListItem extends React.Component {
+class ForumListItemView extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -62,9 +62,6 @@ class ForumListItem extends React.Component {
                         <CardTitle title={forum.title} subtitle={forum.subtitle} />
                     </a>
                 </LinkContainer>
-
-                {/*  + here should have a wrapper that keeps the size the same
-                 the details card could have the same image as a background */}
 
                 <CardMedia className={imageClasses}  style={{width: 350}}>
                     <Image   style={{height: 500}} src="/assets/kittenjesus.jpg" />

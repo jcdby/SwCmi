@@ -1,5 +1,5 @@
 //@flow
-import { gallery_actions } from './action-types'
+import { gallery_actions } from '../actions/action-types'
 import fetch from 'axios'
 
 function requestGalleryList () {

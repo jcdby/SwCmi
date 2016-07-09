@@ -8,7 +8,7 @@ import Image from 'react-bootstrap/lib/Image'
 
 
 
-export default class CellIntro extends React.Component {
+export default class CellIntroView extends React.Component {
   render() {
     return (<Grid>
       <Row>

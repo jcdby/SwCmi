@@ -11,7 +11,7 @@ const StoneCutterGrid = makeResponsive(measureItems(SpringGrid, { measureImages:
 
 const DEFAULT_IMAG = "http://www.atmos.washington.edu/~carey/images/notFound.png"
 
-export default class Gallery extends React.Component {
+export default class GalleryView extends React.Component {
 
 
     constructor(props) {
@@ -54,8 +54,8 @@ export default class Gallery extends React.Component {
 
         )
     }
-};
+}
 
-Gallery.propTypes = { galleryList: React.PropTypes.array };
-Gallery.defaultProps = { galleryList: [{ file_name1: '21', subject: 'dfd', memo: 'bla' }] };
+GalleryView.propTypes = { galleryList: React.PropTypes.array };
+GalleryView.defaultProps = { galleryList: [{ file_name1: '21', subject: 'dfd', memo: 'bla' }] };
 

@@ -6,7 +6,7 @@ import React from 'react';
 import {ListGroupItem, Panel, Button, FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap'
 import {Link} from 'react-router';
 
-export default class ForumTopic extends React.Component {
+export default class Old_ForumTopicView extends React.Component {
 
     constructor(props){
         super(props);

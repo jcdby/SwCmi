@@ -4,7 +4,7 @@
 import React from 'react'
 import store from '../../store/Store'
 import {connect} from 'react-redux'
-import Topic from '../views/Topic.jsx'
+import TopicView from './TopicView'
 
 export default
 class TopicContainer extends React.Component {
@@ -15,7 +15,7 @@ class TopicContainer extends React.Component {
     render() {
         return (
             <div>
-                <Topic/>
+                <TopicView/>
             </div>
         )
     }

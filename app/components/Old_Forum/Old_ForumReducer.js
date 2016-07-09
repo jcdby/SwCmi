@@ -1,4 +1,4 @@
-import { old_forum_actions } from '../components/actions/action-types'
+import { old_forum_actions } from '../actions/action-types'
 
 const initialForumState = {
     'categories': [],

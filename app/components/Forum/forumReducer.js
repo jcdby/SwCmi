@@ -1,8 +1,7 @@
 /**
  * Created by fwavresky on 6/18/2016.
  */
-
-import { forum_actions } from '../components/actions/action-types'
+import { forum_actions } from '../actions/action-types';
 
 const initialForumState = {
     'forumList': [], // the objects have to be defined

@@ -5,10 +5,10 @@
 import React from 'react'
 import store from '../../store/Store'
 import {connect} from 'react-redux'
-import ForumList from '../views/ForumList.jsx'
+import ForumListView from './ForumListView'
 
 import axios from 'axios'
-import {getForumListSuccess} from '../actions/forum-actions';
+import {getForumListSuccess} from './ForumActions';
 
 class ForumListContainer extends React.Component {
     componentDidMount() {
@@ -26,7 +26,7 @@ class ForumListContainer extends React.Component {
     render() {
         return (
             <div>
-                <ForumList forumListProps = {this.props.forumList}/>
+                <ForumListView forumListProps = {this.props.forumList}/>
             </div>
         )
     }

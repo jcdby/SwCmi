@@ -3,9 +3,9 @@ import axios from 'axios'
 import {connect} from 'react-redux'
 
 import store from '../../store/Store'
-import {getForumTopicSuccess, setForumTopicSuccess} from '../actions/oldForum-actions';
+import {getForumTopicSuccess, setForumTopicSuccess} from './Old_Forum-actions';
 
-import OldForumTopic from '../views/Old_ForumTopic.jsx'
+import OldForumTopicView from './Old_ForumTopicView'
 
 class OldForumTopicContainer extends React.Component {
 
@@ -41,7 +41,7 @@ class OldForumTopicContainer extends React.Component {
 
     render() {
         return (
-            <OldForumTopic
+            <OldForumTopicView
                 author_nameProp = {this.state.author_name}
                 post_titleProp = {this.state.post_title}
                 post_textProp = {this.state.post_text}

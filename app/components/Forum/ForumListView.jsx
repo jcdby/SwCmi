@@ -1,5 +1,5 @@
 import React from 'react'
-import ForumListItem from '../views/ForumListItem.jsx';
+import ForumListItemView from './ForumListItemView';
 
 import { CSSGrid, measureItems, makeResponsive, layout } from 'react-stonecutter';
 import {Card} from 'material-ui/Card';
@@ -37,7 +37,7 @@ class ForumList extends React.Component {
                     {this.props.forumListProps.map((forum, index) => {
                         return (
                             <Card className="forumlist-forum-item" key={index} style={{width: 350}}>
-                                <ForumListItem forumProp = {forum}/>
+                                <ForumListItemView forumProp = {forum}/>
                             </Card>
                         )
                     })}

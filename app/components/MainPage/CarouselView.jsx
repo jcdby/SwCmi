@@ -1,7 +1,7 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/lib/Carousel'
 
-export default class CarouselCus extends React.Component {
+export default class CarouselView extends React.Component {
   render() {
     return (<Carousel>
       <Carousel.Item>

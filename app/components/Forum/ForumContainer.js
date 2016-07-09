@@ -4,7 +4,7 @@
 import React from 'react'
 import store from '../../store/Store'
 import {connect} from 'react-redux'
-import Forum from '../views/Forum.jsx'
+import ForumView from './ForumView'
 
 export default
 class ForumContainer extends React.Component {
@@ -15,7 +15,7 @@ class ForumContainer extends React.Component {
     render() {
         return (
             <div>
-                <Forum/>
+                <ForumView/>
             </div>
         )
     }

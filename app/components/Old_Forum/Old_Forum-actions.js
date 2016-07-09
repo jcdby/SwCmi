@@ -1,7 +1,7 @@
 /**
  * Created by fwavresky on 7/7/2016.
  */
-import { old_forum_actions } from './action-types'
+import { old_forum_actions } from '../actions/action-types'
 
 export function getForumCategoriesSuccess(categories) {
     return {

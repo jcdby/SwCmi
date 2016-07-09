@@ -1,9 +1,9 @@
 import React from 'react';
 import axios from 'axios';
-import {getForumCategoriesSuccess} from '../actions/oldForum-actions';
+import {getForumCategoriesSuccess} from './Old_Forum-actions';
 import {connect} from 'react-redux';
 import store from '../../store/Store';
-import OldForum_list from '../views/Old_Forum_list.jsx';
+import Old_ForumListView from './Old_ForumListView';
 
 class OldForumContainer extends React.Component {
     componentDidMount() {
@@ -20,7 +20,7 @@ class OldForumContainer extends React.Component {
 
     render() {
         return (
-            <OldForum_list categoriesProp = {this.props.categories}/>
+            <Old_ForumListView categoriesProp = {this.props.categories}/>
         )
     }
 }

@@ -7,7 +7,7 @@ class LoginComponent extends Component {
     super(props);
     this.state = {
       logined: false
-    }
+    };
     this.handleLogin = this.handleLogin.bind(this);
     this.handleSignIn = this.handleSignIn.bind(this);
   }

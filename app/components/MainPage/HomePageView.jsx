@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 import { Footer } from 'rebass'
-import CellIntro from '../views/CellIntro'
-import Carousel from '../views/Carousel'
+import CellIntroView from './CellIntroView'
+import CarouselView from './CarouselView'
 
-class HomePage extends Component {
+export default
+class HomePageView extends Component {
   render() {
     return (
       <div>
-        <div><Carousel/></div>
-        <div style={{ margin: 50 }}><CellIntro/></div>
+        <div><CarouselView/></div>
+        <div style={{ margin: 50 }}><CellIntroView/></div>
         <div>
           <div className="page-header col-md-12">
             <h1>교회에 오신 것을 환영합니다</h1>
@@ -33,5 +34,3 @@ class HomePage extends Component {
     );
   }
 }
-
-export default HomePage;

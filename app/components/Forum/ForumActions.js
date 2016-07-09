@@ -1,4 +1,4 @@
-import { forum_actions } from './action-types'
+import { forum_actions } from '../actions/action-types.js';
 
 export function getForumListSuccess(forumList) {
     return {
