@@ -1,7 +1,8 @@
 import React from 'react';
 import { CSSGrid, SpringGrid, measureItems, makeResponsive, layout } from 'react-stonecutter';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import AdvancedPagination from './AdvancedPagination'
+import AdvancedPagination from './AdvancedPagination';
+import Button from 'react-bootstrap/lib/Button'
 
 
 const StoneCutterGrid = makeResponsive(measureItems(SpringGrid, { measureImages: true }), {
@@ -18,14 +19,16 @@ export default class GalleryView extends React.Component {
         super(props)
     }
 
-    handleImgError () {
+    handleImgError() {
 
     }
 
 
     render() {
         return (<div style={{ position: 'relative', width: '80%', margin: 'auto', paddingTop: 20, paddingBottom: 50 }}>
-            <AdvancedPagination handleSelect={this.props.handleSelect} pageNo={this.props.count} ></AdvancedPagination>
+            <div>
+                <AdvancedPagination handleSelect={this.props.handleSelect} pageNo={this.props.count} ></AdvancedPagination>
+            </div>
             <StoneCutterGrid
                 columnWidth={350}
                 gutterWidth={5}
@@ -37,8 +40,8 @@ export default class GalleryView extends React.Component {
                 {this.props.galleryList.map((item, index) => {
                     return (<Card >
                         <CardMedia style={{ width: 350 }}>
-                            <img  src={"http://localhost:10000/" + item.file_name1} onError={(e)=>{e.target.src=DEFAULT_IMG}}
-                            />
+                            <img  src={"http://localhost:10000/" + item.file_name1} onError={(e) => { e.target.src = DEFAULT_IMG } }
+                                />
                         </CardMedia>
                         <CardTitle title={item.subject} subtitle={item.name} />
                         <CardText>
