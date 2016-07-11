@@ -6,7 +6,7 @@ import store from '../../store/Store'
 import {connect} from 'react-redux'
 import Forum from '../views/Forum.jsx'
 
-export default
+
 class ForumContainer extends React.Component {
     componentDidMount() {
 

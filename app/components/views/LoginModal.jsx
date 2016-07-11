@@ -97,7 +97,7 @@ class LoginModal extends Component {
       <FormGroup>
         <Col smOffset={2} sm={10}>
           <Button>
-            Sign in
+            Sign Up
           </Button>
         </Col>
       </FormGroup>
