@@ -12,7 +12,6 @@ console.log("FORUM_FILE " + FORUM_FILE);
 
 router.get('/forumList', function (req, res) {
     console.log("get /forumList");
-
     fs.readFile(FORUM_FILE, function (err, data) {
         if (err) {
             console.error(err);

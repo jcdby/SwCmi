@@ -12,7 +12,6 @@ module.exports = function () {
     taskList.forEach(function (taskFile) {
         var taskName = taskFile.replace('.js', '');
         gulp.task(taskName, require(taskPath + taskFile)(gulp)); // gulp is given as an option to every task
-
     });
 
     return gulp;
