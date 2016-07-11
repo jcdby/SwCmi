@@ -18,10 +18,8 @@ module.exports = function (gulp) {
   var bundler_Index = browserify({
     entries: [entryFile],
     extensions: ['.jsx', '.js'],
-    debug: true,
     cache: {},
     packageCache: {},
-    fullPaths: true
   })
 
   var bundle_Index = function (file) {

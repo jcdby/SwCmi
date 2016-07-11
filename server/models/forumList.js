@@ -9,7 +9,6 @@ var Schema = mongoose.Schema;
 var ForumListSchema = new Schema({
         forumList: [
             {
-                _id: mongoose.Schema.Types.ObjectId,
                 state: String,
                 title: String,
                 subtitle: String,

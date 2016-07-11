@@ -7,7 +7,6 @@ import database from './../Database//database'
 var Schema = mongoose.Schema;
 
 var TopicSchema = new Schema({
-    _id: mongoose.Schema.Types.ObjectId,
     forum_id: mongoose.Schema.Types.ObjectId,
     state: String,
     title: String,
