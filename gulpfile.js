@@ -1,3 +1,3 @@
-var gulp = require('./gulp')();
+var gulp = require('./gulp_repo')();
 
-gulp.task('default', ['jsxcompile']);
+gulp.task('default', ['webpack-watch']);
