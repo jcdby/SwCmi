@@ -16,10 +16,10 @@ const forumReducer = function (state = initialForumState, action = '') {
             var newState = Object.assign({}, state, {forumList: action.forumList});
             return newState;
         case forum_actions.GET_FORUM_SUCCESS :
-            var newState = Object.assign({}, state, {active_forum: action.forum});
+            var newState = Object.assign({}, state, {active_forum: action.active_forum});
             return newState;
         case forum_actions.POST_FORUM_SUCCESS :
-            var newState = Object.assign({}, state, {active_forum: action.topic});
+            var newState = Object.assign({}, state, {active_forum: action.forum});
             return newState;
         case forum_actions.GET_TOPIC_SUCCESS :
             var newState = Object.assign({}, state, {active_topics: action.topic});

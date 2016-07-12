@@ -16,6 +16,7 @@ module.exports = function (gulp) {
                 output: {
                     filename: 'bundle.js'
                 },
+                devtool: "source-map",
                 module: {
                     loaders: [
                         {
