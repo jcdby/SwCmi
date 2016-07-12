@@ -14,7 +14,7 @@ app.use('/', express.static(path.join(rootDir, 'public')));
 app.use(express.static('./')); // what is this code for ?? @TODO
 
 // -------- APIs
-app.use('/api/forum', forumAPI);
+app.use('/forum', forumAPI);
 app.use('/api/old_forum', oldForumAPI);
 // -------------- end Forum API
 
