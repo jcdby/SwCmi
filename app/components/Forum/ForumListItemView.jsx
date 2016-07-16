@@ -90,7 +90,7 @@ class ForumListItemView extends React.Component {
                         case 1:
                             return (<span>
                                 <emp> There is </emp>
-                                <strong> {forum.topics_list.length}</strong>
+                                <strong> 1 </strong>
                                 <emp> topic discussed in this forum </emp>
                             </span>
                             );

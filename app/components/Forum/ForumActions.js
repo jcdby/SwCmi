@@ -7,10 +7,10 @@ export function getForumListSuccess(forumList) {
     };
 }
 
-export function getForumSuccess(forum) {
+export function getForumSuccess(active_forum) {
     return {
         type: forum_actions.GET_FORUM_SUCCESS,
-        forum
+        active_forum
     };
 }
 

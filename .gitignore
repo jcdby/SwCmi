@@ -2,6 +2,7 @@ node_modules
 .flowconfig
 jsconfig.json
 public/bundle.js
+public/bundle.js.map
 .vscode/launch.json
 .idea/*
 .idea/workspace.xml
