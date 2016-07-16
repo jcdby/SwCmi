@@ -6,7 +6,7 @@ import NavDropdown from 'react-bootstrap/lib/NavDropdown'
 import MenuItem from 'react-bootstrap/lib/MenuItem'
 import { Link } from 'react-router'
 import { LinkContainer } from 'react-router-bootstrap'
-import LoginComponent from './LoginComponent'
+import HeaderRightLoginView from './HeaderRightLoginView'
 
 
 export default
@@ -18,7 +18,7 @@ export default
                     <Navbar.Header>
                         <Navbar.Brand>
                             <LinkContainer to="/">
-                                <NavItem eventKey={1}>
+                                <NavItem eventKey={1} href='#'>
                                     수원 선교 교회
                                 </NavItem>
                             </LinkContainer>
@@ -44,7 +44,7 @@ export default
                         </LinkContainer>
                         <LinkContainer to="/old_forum">
                             <NavItem eventKey={5}>
-                                계시판
+                                Daily Bible
                             </NavItem>
                         </LinkContainer>
                         <LinkContainer to="/forum">
@@ -64,7 +64,7 @@ export default
                             </MenuItem>
                         </NavDropdown>
                     </Nav>
-                    <LoginComponent clickLogin={this.props.clickLogin}></LoginComponent>                    
+                    <HeaderRightLoginView {...this.props}></HeaderRightLoginView>                 
                 </Navbar>
             </div>
         )
