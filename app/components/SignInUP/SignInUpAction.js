@@ -23,6 +23,20 @@ function signUPF(result: Object) {
   })
 }
 
+function signInS(result: any) {
+  return ({
+    type: sign_in_up_actions.SIGN_IN_SUCCESS,
+    result
+  })
+}
+
+function signInF(result: any) {
+  return ({
+    type: sign_in_up_actions.SIGN_IN_FAILE,
+    result
+  })
+}
+
 export function signUP(userInfo: Object) {
   return (dispatch) => {
     dispatch(pre_signUp());
@@ -31,6 +45,7 @@ export function signUP(userInfo: Object) {
       .then(res => {
         if(res.data.isSignUpSuccess){
           dispatch(signUPS(res));
+          dispatch(signInS(res));
         }else{
           dispatch(signUPF(res));
         }

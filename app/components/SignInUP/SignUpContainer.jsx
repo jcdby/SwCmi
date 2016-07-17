@@ -10,11 +10,26 @@ import CircularProgress from 'material-ui/CircularProgress';
 class SignUpContainer extends Component {
   constructor(props) {
     super(props);
+    this.state ={
+      isInit: true
+    }
     this.SignUp = this.SignUp.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   SignUp(data) {
+    this.setState({
+      isInit: false
+    })
     store.dispatch(SignUpAction.signUP(data))
+  }
+
+  closeModal(){
+    this.setState({
+      isInit: true
+    });
+    this.props.closeModal()
+
   }
 
   renderOnSignUp() {
@@ -22,18 +37,21 @@ class SignUpContainer extends Component {
   }
 
   renderSignUpForm() {
-    if (this.props.userState.isLogined) {
-      return <h1>Welcome {this.props.userState.userName}</h1>
+    if (this.props.signUpState.isSignUpSuccess) {
+      return <h1>Welcome {this.props.userState.userName}, Sign Up Successfully</h1>
+    } else if (!this.props.signUpState.isSignUpSuccess && !this.state.isInit){
+      return <SignUpView msg={this.props.signUpState.errMsg} {...this.props} onClickSignUp={this.SignUp} ></SignUpView>
     } else {
-      return <SignUpView {...this.props} onClickSignUp={this.SignUp} ></SignUpView>
+      let msg = ''
+      return <SignUpView msg={msg} onClickSignUp={this.SignUp} ></SignUpView>
     }
 
   }
 
   render() {
     return (<div>
-      <ModalView showModal={this.props.showModal} closeModal={this.props.closeModal} >
-        {this.props.userState.isSignUping ? this.renderOnSignUp() : this.renderSignUpForm() }
+      <ModalView showModal={this.props.showModal} closeModal={this.closeModal} >
+        {this.props.signUpState.isSignUping ? this.renderOnSignUp() : this.renderSignUpForm() }
       </ModalView>
     </div>
     );
@@ -43,6 +61,7 @@ class SignUpContainer extends Component {
 
 const mapStateToProps = (state: StoreState) => {
   return {
+    signUpState: state.signUpState,
     userState: state.userState
   }
 }
