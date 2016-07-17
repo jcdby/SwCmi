@@ -27,3 +27,13 @@ export const old_forum_actions = {
     GET_FORUM_TOPIC_SUCCESS: 'GET_FORUM_TOPIC_SUCCESS',
     POST_FORUM_TOPIC_SUCCESS: 'POST_FORUM_TOPIC_SUCCESS'
 };
+
+
+/**
+ * Actions for Sign in and up
+ */
+export const sign_in_up_actions = {
+    SIGN_UP: 'SIGN_UP',
+    SIGN_UP_SUCCESS: 'SIGN_UP_SUCCESS',
+    SIGN_UP_FAILE: 'SIGN_UP_FAILE'
+}

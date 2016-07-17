@@ -8,44 +8,76 @@ import FormControl from 'react-bootstrap/lib/FormControl';
 import {HelpBlock} from 'react-bootstrap'
 
 class SignUpView extends Component {
-  render() {
-    return (
-      <div>
-        <Form horizontal action="/login">
-            <FormGroup controlId="formHorizontalEmail">
-                <Col componentClass={ControlLabel} sm={2}>
-                    UserName
-                </Col>
-                <Col sm={10}>
-                    <FormControl type="email" placeholder="Email" name="email" />
-                </Col>
-                <Col sm={12}>
-                    <HelpBlock>Help text with validation state.</HelpBlock>
-                </Col>                
-            </FormGroup>
+    constructor(props) {
+        super(props);
+        this.state = {
+            username: '',
+            password: '',
+        }
 
-            <FormGroup controlId="formHorizontalPassword">
-                <Col componentClass={ControlLabel} sm={2}>
-                    Password
-                </Col>
-                <Col sm={10}>
-                    <FormControl type="password" placeholder="Password" name="password" />
-                </Col>
-                 <Col sm={12}>
-                    <HelpBlock>Help text with validation state.</HelpBlock>
-                </Col> 
-            </FormGroup>
-            <FormGroup>
-                <Col smOffset={2} sm={10}>
-                    <Button>
-                        Sign Up
-                    </Button>
-                </Col>
-            </FormGroup>
-        </Form>
-      </div>
-    );
-  }
+        this.onUpdateUsername = this.onUpdateUsername.bind(this);
+        this.onUpdatePassword = this.onUpdatePassword.bind(this);
+        this.onClickSignUp = this.onClickSignUp.bind(this);
+
+    }
+
+    onUpdateUsername(e) {
+        this.setState({
+            username: e.target.value
+        })
+    }
+
+    onUpdatePassword(e) {
+        this.setState({
+            password: e.target.value
+        })
+    }
+
+    onClickSignUp() {
+        let data = {};
+        data.username = this.state.username;
+        data.password = this.state.password;
+
+        this.props.onClickSignUp(data)
+    }
+
+
+
+    render() {
+        return (
+            <div>
+                <Form horizontal>
+                   {this.props.userState.isSignUpSuccess ? null : <HelpBlock>{this.props.userState.msg}</HelpBlock>} 
+                    <FormGroup controlId="formHorizontalEmail">
+                        <Col componentClass={ControlLabel} sm={2}>
+                            UserName
+                        </Col>
+                        <Col sm={10}>
+                            <FormControl type="text" placeholder="User Name" name="username"  value={this.state.username} onChange={this.onUpdateUsername} />
+                        </Col>
+
+                    </FormGroup>
+
+                    <FormGroup controlId="formHorizontalPassword">
+                        <Col componentClass={ControlLabel} sm={2}>
+                            Password
+                        </Col>
+                        <Col sm={10}>
+                            <FormControl type="password" placeholder="Password" name="password" value={this.state.password} onChange={this.onUpdatePassword} />
+                        </Col>
+
+                    </FormGroup>
+                    <FormGroup>
+                        <Col smOffset={2} sm={10}>
+                            <Button onClick={this.onClickSignUp}>
+                                Sign Up
+                            </Button>
+                        </Col>
+                    </FormGroup>
+                </Form>
+            </div>
+        );
+    }
 }
 
 export default SignUpView;
