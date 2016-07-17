@@ -1,37 +1,60 @@
-import React from 'react'
-import HeaderView from './HeaderView'
-import { Footer } from 'rebass'
-import LoginModalView from './LoginModalView'
+import React from 'react';
+import HeaderContainer from '../Header/HeaderContainer';
+import { Footer } from 'rebass';
+import SignUpContainer from '../SignInUP/SignUpContainer'
+import SignInContainer from '../SignInUP/SignInContainer'
 
 export default
     class MainLayout extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
-            showModal: false
-        };
+            showSignInModal: false,
+            showSignUpModal: false,
+            username: '',
+            isLogined: false
+        }
 
-        this.clickLogin = this.clickLogin.bind(this);
-        this.closeModal = this.closeModal.bind(this);
+        this.onClickSignIn = this.onClickSignIn.bind(this);
+        this.onClickSignUp = this.onClickSignUp.bind(this);
+        this.onCloseSignIn = this.onCloseSignIn.bind(this);
+        this.onCloseSignUp = this.onCloseSignUp.bind(this);
+
     }
 
-    clickLogin() {
+    onClickSignIn() {
         this.setState({
-            showModal: true
+            showSignInModal: !this.state.showSignInModal,
+            showSignUpModal: false
         })
     }
 
-    closeModal() {
+    onClickSignUp() {
         this.setState({
-            showModal: false
+            showSignUpModal: !this.state.showSignUpModal,
+            showSignInModal: false
         })
     }
+
+    onCloseSignIn() {
+        this.setState({
+            showSignInModal: false
+        })
+    }
+
+    onCloseSignUp() {
+        this.setState({
+            showSignUpModal: false
+        })
+    }
+
 
     render() {
         return (
             <div>
-                <HeaderView clickLogin={this.clickLogin}></HeaderView>
-                <LoginModalView showModal={this.state.showModal} closeModal={this.closeModal}></LoginModalView>
+                <HeaderContainer onClickSignIn={this.onClickSignIn} onClickSignUp={this.onClickSignUp} username={this.state.username} isLogined={this.state.isLogined} ></HeaderContainer>
+                <SignUpContainer showModal={this.state.showSignUpModal} closeModal={this.onCloseSignUp} ></SignUpContainer>
+               <SignInContainer showModal={this.state.showSignInModal} closeModal={this.onCloseSignIn} ></SignInContainer>
                 {this.props.children}
             </div>
         )
