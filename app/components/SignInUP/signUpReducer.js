@@ -9,6 +9,7 @@ const initialState: SignUpState = {
 const initialUserState: UserState = {
   isLogined: false,
   isSignIning: false,
+  errOn: '',
   userName: '',
   token: '',
   msg: ''
@@ -36,10 +37,10 @@ export function signInReducer(state = initialUserState, action: any) {
       return {...state, isSignIning: true }
       break;
     case sign_in_up_actions.SIGN_IN_SUCCESS:
-      return {...state, isLogined: true, token: action.result.data.token, userName: action.result.data.userInfo.username, isSignIning: false, msg: action.result.data.msg }
+      return {...state, isLogined: true, token: action.result.data.token, userName: action.result.data.userName, isSignIning: false, msg: action.result.data.msg }
       break;
     case sign_in_up_actions.SIGN_IN_FAILE:
-      return {...state, isLogined: false }
+      return {...state, isSignIning: false, errOn: action.result.data.errOn, msg: action.result.data.msg }
       break;
     default:
       return state;
