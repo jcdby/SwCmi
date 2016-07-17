@@ -12,7 +12,7 @@ class TopicView extends React.Component {
     constructor(props) {
         super(props);
         this.createTopic = this.createTopic.bind(this);
-        this.displayTopic = this.displayTopic.bind(this);
+        this.displayPost = this.displayPost.bind(this);
     }
 
     render() {
@@ -23,15 +23,19 @@ class TopicView extends React.Component {
         )
     }
 
-    createTopic () {
+    createTopic() {
+        var topic = this.props.topicProp;
         return (
             <Grid>
+
                 <Row className="header">
-                    <strong>Missionary Work </strong>
-                    >>
-                    <strong> Israel and Missionary Work</strong>
-                    >>
-                    <strong> 6 replies </strong>
+                    <h2> {topic.title}</h2>
+                    by
+                    <emp> {topic.author}</emp>
+                    <br/>
+                    <p> {topic.description}</p>
+                    <br/>
+                    Last post by {topic.last_post_author} {topic.last_post_date}
                 </Row>
                 <Row className="post-reply" mdOffset={2} md={10}>
                     <Form horizontal>
@@ -66,26 +70,27 @@ class TopicView extends React.Component {
                 </Row>
                 <Row className="content">
                     <ListGroup>
-                        {this.displayTopic()}
-                        {this.displayTopic()}
-                        {this.displayTopic()}
-                        {this.displayTopic()}
-                        {this.displayTopic()}
-                        {this.displayTopic()}
+                     {
+                         (topic.posts_list !== undefined)
+                             ? topic.posts_list.map((post, index) => {
+                             this.displayPost(post, index);
+                         })
+                             : <div>No posts on this topic. Be the first !</div>
+                         }
                     </ListGroup>
                 </Row>
 
             </Grid>
         )
-    };
+    }
 
-    displayTopic () {
+    displayPost(post, index) {
         return (
-            <ListGroupItem>
+            <ListGroupItem key={index}>
                 <Grid>
                     <Col className="topic-original-user" md={2}>
                         <Row className="user-name">
-                            <strong>Jincheng</strong>
+                            <strong>{post.author}</strong>
                         </Row>
                         <Row className="user-thumb">
                             <Image src="/assets/kittenjesus.jpg" thumbnail />
@@ -95,14 +100,16 @@ class TopicView extends React.Component {
                         </Row>
                     </Col>
                     <Col className="topic-description" md={10}>
-                        What are the specificities of Israel as a missonary land&#63;
+                        <strong>
+                            {post.title}
+                        </strong>
                         <br/>
-                        Since this is the only Jewish country in the world, with a large muslim minority, how would you approach the missionary work&#63;
+                            {post.content}
                         <br/>
-                        What is the percentage of Christians there&#63;
                     </Col>
                 </Grid>
             </ListGroupItem>
         )
-    };
+    }
+
 }

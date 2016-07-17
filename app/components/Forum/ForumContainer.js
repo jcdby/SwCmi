@@ -13,7 +13,7 @@ class ForumContainer extends React.Component {
     componentDidMount() {
         var forumID = this.props.params.forumID;
         console.log(forumID);
-        axios.get(web_serv_base + '/forum/' + forumID)
+        axios.get(web_serv_base + '/forum/forumList/' + forumID)
             .then((res) => {
                 console.log('api called front end getForumSuccess');
                 store.dispatch(getForumSuccess(res.data));

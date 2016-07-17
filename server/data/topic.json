@@ -6,7 +6,8 @@
     "title": "Your experiences",
     "author": "Jincheng",
     "description": "Speak about your experiences here!",
-    "active": "2016-06-09-10:20:40",
+    "last_post_date": "2016-06-09-10:20:40",
+    "last_post_author": "Jincheng",
     "posts_list": [
       {
         "post_id": 1,
@@ -35,7 +36,8 @@
     "title": "What is missionary work?",
     "author": "Dung",
     "description": "Explanations",
-    "active": "2016-07-07-10:20:40",
+    "last_post_date": "2016-06-09-10:20:40",
+    "last_post_author": "Francois",
     "posts_list": [
       {
         "post_id": 1,
@@ -52,7 +54,8 @@
     "title": "Missionary targets",
     "author": "Jincheng",
     "description": "Where to spread the Word?",
-    "active": "2016-06-09-10:20:40",
+    "last_post_date": "2016-06-09-10:20:40",
+    "last_post_author": "Jincheng",
     "posts_list": [
       {
         "post_id": 1,

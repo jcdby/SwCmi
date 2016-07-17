@@ -6,21 +6,26 @@ var router = express.Router();
 var path = require('path');
 var fs = require('fs');
 
-var FORUM_COLLECTION_FILE = path.join(__dirname, '..', 'data', 'forumsCollection.json');
-console.log("FORUM_COLLECTION_FILE " + FORUM_COLLECTION_FILE);
+var FORUM_LIST_FILE = path.join(__dirname, '..', 'data', 'forumList.json');
+console.log("FORUM_LIST_FILE " + FORUM_LIST_FILE);
+
+var FORUM_FILE = path.join(__dirname, '..', 'data', 'forum.json');
+console.log("FORUM_FILE " + FORUM_FILE);
+
+var TOPIC_FILE = path.join(__dirname, '..', 'data', 'topic.json');
+console.log("TOPIC_FILE " + TOPIC_FILE);
 
 
-
-//router.get('/forumList', function (req, res) {
-//    console.log("get /forumList");
-//    fs.readFile(FORUM_LIST_FILE, function (err, data) {
-//        if (err) {
-//            console.error(err);
-//            process.exit(1);
-//        }
-//        res.json(JSON.parse(data));
-//    });
-//});
+router.get('/forumList', function (req, res) {
+    console.log("get /forumList");
+    fs.readFile(FORUM_LIST_FILE, function (err, data) {
+        if (err) {
+            console.error(err);
+            process.exit(1);
+        }
+        res.json(JSON.parse(data));
+    });
+});
 
 router.get('/forumList/:forumState', function (req, res) {
     var forum_state = req.params.forumState;

@@ -1,0 +1,119 @@
+[
+  {
+    "state": "missionary_work",
+    "title": "Missionary Work",
+    "subtitle": "Missionary Work in general",
+    "author": "Jincheng",
+    "description": "A forum discussing missionary work in general. You can also find more about the missions of our members oversea.",
+    "creation_date": "2016-05-04-12:27:40",
+    "topics_list": [
+      {
+        "state": "your_experiences",
+        "title": "Your experiences",
+        "author": "Jincheng",
+        "description": "Speak about your experiences here!",
+        "creation_date": "2016-05-04-12:50:00",
+        "posts_list": [
+          {
+            "title": "Israel and missionary work",
+            "author": "Mose",
+            "content": "What are the specificities  of Israel as a missionary land? Since this is the only Jewish country in the world, with a large muslim minority, how would you approach the missionary work?         What is the percentage of Christians there?",
+            "creation_date": "2016-05-04-12:53:00"
+          },
+          {
+            "title": "Reducers",
+            "author": "Francois",
+            "content": "They are useful for sure. But for religion, I'm not sure... That's an open question, I'd say. One should try!",
+            "creation_date": "2016-05-09-10:20:40"
+          },
+          {
+            "title": "Korea",
+            "author": "Simon",
+            "content": "Nobody wants to read the bible in czech in Korea. Don't even try.... I've wasted a whole month trying to preach around.",
+            "creation_date": "2016-06-01-11:20:40"
+          }
+        ]
+      },
+      {
+        "state": "what_is_missionary_work",
+        "title": "What is missionary work?",
+        "author": "Dung",
+        "description": "Explanations",
+        "creation_date": "2016-05-06-13:00:04",
+        "posts_list": [
+          {
+            "title": "The first missionary",
+            "author": "Dung",
+            "content": "John. He enjoyed baptizing people. And Peter as well. He became the first vicary of Rome.",
+            "creation_date": "2016-05-06-13:10:04"
+          }
+        ]
+      },
+      {
+        "state": "missionary_target",
+        "title": "Missionary targets",
+        "author": "Jincheng",
+        "description": "Where to spread the Word?",
+        "creation_date": "2016-06-09-10:20:40",
+        "posts_list": [
+          {
+            "title": "Victor Hugo",
+            "author": "Francois",
+            "content": "Victor Hugo said that god is the Verb, and the Verb is God. Dieu est le verbe et le Verbe c'est dieu. I would encourage everybody to learn French. If you don't find God, at least you can order croissants properly.",
+            "creation_date": "2016-06-09-10:25:40"
+          },
+          {
+            "title": "England",
+            "author": "Francois",
+            "content": "To me, England needs a good worship. A lot of things to be forgiven over there.",
+            "creation_date": "2016-06-09-10:35:13"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "general_discussion",
+    "title": "General discussion",
+    "subtitle": "About anything and everything",
+    "author": "Francois",
+    "description": "This is meant to exchange about trivial topics.",
+    "creation_date": "2016-06-14-09:20:20",
+    "topics_list": [
+      {
+        "state": "best_samgyeospal_korea",
+        "title": "What is the best Samgyeopsal place in Korea????",
+        "author": "Francois",
+        "description": "We are hungry.",
+        "creation_date": "2016-06-14-09:27:25",
+        "posts_list": []
+      },
+      {
+        "state": "camping",
+        "title": "Camping",
+        "author": "Simon",
+        "description": "What Where When How Who Why ?",
+        "creation_date": "2016-06-15-08:10:08",
+        "posts_list": []
+      }
+    ]
+  },
+  {
+    "state": "worship",
+    "title": "Worship",
+    "subtitle": "Worshiping schedules and activities",
+    "author": "Francois",
+    "description": "This is meant to exchange about trivial topics.",
+    "creation_date": "2016-06-30-15:38:19",
+    "topics_list": [
+      {
+        "state": "sunday_regular_meetings_schedule",
+        "title": "Sunday regular meetings schedule",
+        "author": "Francois",
+        "description": "The schedule will be updated here.",
+        "creation_date": "2016-06-30-15:40:07",
+        "posts_list": []
+      }
+    ]
+  }
+]

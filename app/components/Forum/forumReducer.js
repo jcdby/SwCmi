@@ -6,7 +6,7 @@ import { forum_actions } from '../actions/action-types';
 const initialForumState = {
     'forumList': [], // the objects have to be defined
     'active_forum': [],
-    'active_topics': [],
+    'active_topic': [],
     'active_posts': []
 };
 
@@ -22,7 +22,7 @@ const forumReducer = function (state = initialForumState, action = '') {
             var newState = Object.assign({}, state, {active_forum: action.forum});
             return newState;
         case forum_actions.GET_TOPIC_SUCCESS :
-            var newState = Object.assign({}, state, {active_topics: action.topic});
+            var newState = Object.assign({}, state, {active_topic: action.active_topic});
             return newState;
         case forum_actions.POST_TOPIC_SUCCESS :
             var newState = Object.assign({}, state, {active_topics: action.topic});

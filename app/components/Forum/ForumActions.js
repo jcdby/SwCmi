@@ -21,10 +21,10 @@ export function setForumSuccess(forum) {
     };
 }
 
-export function getTopicSuccess(topic) {
+export function getTopicSuccess(active_topic) {
     return {
         type: forum_actions.GET_TOPIC_SUCCESS,
-        topic
+        active_topic
     };
 }
 

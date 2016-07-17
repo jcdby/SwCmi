@@ -10,30 +10,33 @@
     "topics_list": [
       {
         "topic_id": 1,
-        "title": "Israel and missionary work",
-        "author": "Francois",
-        "replies": 5,
+        "state": "your_experiences",
+        "title": "Your experiences",
+        "author": "Jincheng",
+        "description": "Speak about your experiences here!",
+        "replies": 3,
         "last_post_date": "2016-06-09-10:20:40",
-        "last_post_author": "Jincheng",
-        "content": "What are the specificities  of Israel as a missionary land? Since this is the only Jewish country in the world, with a large muslim minority, how would you approach the missionary work?         What is the percentage of Christians there?"
+        "last_post_author": "Jincheng"
       },
       {
         "topic_id": 2,
-        "title": "Reducers",
-        "author": "Francois",
-        "replies": 5,
+        "state": "what_is_missionary_work",
+        "title": "What is missionary work?",
+        "author": "Dung",
+        "description": "Explanations",
+        "replies": 1,
         "last_post_date": "2016-06-09-10:20:40",
-        "last_post_author": "Jincheng",
-        "content": "They are useful for sure. But for religion, I'm not sure... That's an open question, I'd say."
+        "last_post_author": "Francois"
       },
       {
         "topic_id": 3,
-        "title": "Flux",
-        "author": "Simon",
-        "replies": 5,
+        "state": "missionary_target",
+        "title": "Missionary targets",
+        "author": "Jincheng",
+        "description": "Where to spread the Word?",
+        "replies": 2,
         "last_post_date": "2016-06-09-10:20:40",
-        "last_post_author": "Jincheng",
-        "content": "What other design could be suitable? Maybe there is something simpler than redux.. And I have a problem with this car image. Is it appropriate?"
+        "last_post_author": "Jincheng"
       }
     ]
   },
@@ -45,7 +48,7 @@
     "author": "Francois",
     "description": "This is meant to exchange about trivial topics.",
     "active": "2016-07-09-10:20:40",
-    "posts_list": [
+    "topics_list": [
       {
         "topic_id": 4,
         "title": "What is the best Samgyeopsal place in Korea????",
@@ -74,7 +77,7 @@
     "author": "Francois",
     "description": "This is meant to exchange about trivial topics.",
     "active": "2016-07-09-10:20:40",
-    "posts_list": [
+    "topics_list": [
       {
         "topic_id": 6,
         "title": "Sunday regular meetings schedule",
