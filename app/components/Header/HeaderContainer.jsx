@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import HeaderView from './HeaderView'
+import HeaderView from './HeaderView';
+import {connect} from 'react-redux'
 
 class HearderContainer extends Component {
   constructor(props) {
@@ -23,10 +24,16 @@ class HearderContainer extends Component {
   render() {
     return (
       <div>
-        <HeaderView onClickSignIn={this.props.onClickSignIn} onClickSignUp={this.props.onClickSignUp} ></HeaderView>
+        <HeaderView {...this.props} onClickSignIn={this.props.onClickSignIn} onClickSignUp={this.props.onClickSignUp} ></HeaderView>
       </div>
     );
   }
 }
 
-export default HearderContainer;
+const mapStateToProps = (state: StoreState) => {
+  return ({
+    userState: state.userState
+  })
+}
+
+export default connect(mapStateToProps)(HearderContainer);
