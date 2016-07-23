@@ -3,7 +3,7 @@ import HeaderView from './HeaderView';
 import {connect} from 'react-redux';
 import * as HeaderActions from './HeaderActions.js';
 import store from '../../store/Store.js';
-import localStorage from 'localStorage' 
+
 
 class HearderContainer extends Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class HearderContainer extends Component {
 
   onClickLogout() {
     store.dispatch(HeaderActions.logout());
-    localStorage.removeItem('userToken');
+    
   }
 
 

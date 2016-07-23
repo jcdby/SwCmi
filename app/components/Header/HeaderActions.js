@@ -20,6 +20,7 @@ export function checkToken() {
 
 
 export function logout() {
+  localStorage.removeItem('userToken');
   return {
     type: sign_in_up_actions.LOGOUT
   }
