@@ -36,3 +36,7 @@ precondition:
 3. Building the application: input command --> gulp
 4. Starting the web-server: input command --> npm run start
 
+###--------------------------------------
+Testing:
+npm install -g karma-cli
+npm run test
