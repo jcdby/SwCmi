@@ -1,4 +1,5 @@
-import {sign_in_up_actions} from '../actions/action-types'
+import {sign_in_up_actions} from '../actions/action-types';
+import localStorage from 'localStorage'
 
 const initialState: SignUpState = {
   isSignUping: false,
@@ -11,7 +12,6 @@ const initialUserState: UserState = {
   isSignIning: false,
   errOn: '',
   userName: '',
-  token: '',
   msg: ''
 }
 
@@ -37,7 +37,11 @@ export function signInReducer(state = initialUserState, action: any) {
       return {...state, isSignIning: true }
       break;
     case sign_in_up_actions.SIGN_IN_SUCCESS:
-      return {...state, isLogined: true, token: action.result.data.token, userName: action.result.data.userName, isSignIning: false, msg: action.result.data.msg }
+      let token = localStorage.getItem('userToken');
+      if(!token){
+        storeToken(action.result.data.token);
+      }      
+      return {...state, isLogined: true, userName: action.result.data.userName, isSignIning: false, msg: action.result.data.msg || '' }
       break;
     case sign_in_up_actions.SIGN_IN_FAILE:
       return {...state, isSignIning: false, errOn: action.result.data.errOn, msg: action.result.data.msg }
@@ -45,4 +49,12 @@ export function signInReducer(state = initialUserState, action: any) {
     default:
       return state;
   }
+}
+
+function storeToken(token: any) {
+  localStorage.setItem('userToken', token);
+}
+
+function readToken() {
+  return localStorage.getItem('userToken');
 }

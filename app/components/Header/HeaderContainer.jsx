@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import HeaderView from './HeaderView';
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
+import * as HeaderActions from './HeaderActions.js';
+import store from '../../store/Store.js'
 
 class HearderContainer extends Component {
   constructor(props) {
@@ -12,6 +14,7 @@ class HearderContainer extends Component {
 
   componentDidMount() {
     //check user token
+    store.dispatch(HeaderActions.checkToken())
   }
   
 

@@ -7,7 +7,6 @@ declare type GalleryState = {
 declare type UserState = {
   isLogined: boolean,
   userName: string,
-  token: any,
   isSignIning: boolean,
   msg: string
 }

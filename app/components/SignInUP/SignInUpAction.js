@@ -1,6 +1,5 @@
 import {sign_in_up_actions} from '../actions/action-types'
 import fetch from 'axios';
-import config from '../../configs/axios_config'
 
 
 function pre_signUp() {
@@ -23,7 +22,7 @@ function signUPF(result: Object) {
   })
 }
 
-function signInS(result: any) {
+export function signInS(result: any) {
   return ({
     type: sign_in_up_actions.SIGN_IN_SUCCESS,
     result
