@@ -3,8 +3,6 @@ import React from 'react'
 import { Grid, Row, Col, DropdownButton, MenuItem, Image, Button, ListGroup, ListGroupItem} from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 
-
-
 export default
 class ForumView extends React.Component {
     constructor(props) {
@@ -22,7 +20,6 @@ class ForumView extends React.Component {
     }
 
     createForum() {
-
         var forum = this.props.forumProps;
 
         return (
@@ -93,7 +90,7 @@ class ForumView extends React.Component {
                     <Col md={8} className="topic-content">
                         <Row className="replies">
                             <Col md={2}>
-                                <strong> {topic.replies} </strong>
+                                <strong> {topic.posts_list.length} </strong>
                                 replies</Col>
                             <Col md={7}>
                                 <emp>Last Post: {topic.last_post_date} by</emp>
@@ -109,38 +106,4 @@ class ForumView extends React.Component {
             </Grid>
         )
     }
-
-}
-
-{
-    /*
-
-     <Col md={2} mdOffset={1}>
-     <DropdownButton title="Missionary Work" id="forum-navigation">
-     <LinkContainer to="/forum/general_discussion">
-     <MenuItem eventKey="1">
-     General Discussion
-     </MenuItem>
-     </LinkContainer>
-
-     <LinkContainer to="/forum/worship">
-     <MenuItem eventKey="2">
-     Worship
-     </MenuItem>
-     </LinkContainer>
-
-     <LinkContainer to="/forum/vacation_and_family">
-     <MenuItem eventKey="3">
-     Vacation &amp; Family
-     </MenuItem>
-     </LinkContainer>
-
-     <LinkContainer to="/forum">
-     <MenuItem eventKey="4">
-     Go Back To Forums List
-     </MenuItem>
-     </LinkContainer>
-     </DropdownButton>
-     </Col>
-     */
 }
