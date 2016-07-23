@@ -16,7 +16,7 @@ import ForumContainer from '../components/Forum/ForumContainer'
 import TopicContainer from '../components/Forum/TopicContainer'
 
 
-class APPRouter extends React.Component {
+class APPRouter extends React.Component {   
     render() {
         return (
             <Router history={browserHistory}>

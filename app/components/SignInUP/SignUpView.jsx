@@ -47,7 +47,7 @@ class SignUpView extends Component {
         return (
             <div>
                 <Form horizontal>
-                   {this.props.userState.isSignUpSuccess ? null : <HelpBlock>{this.props.userState.msg}</HelpBlock>} 
+                   {<HelpBlock>{this.props.msg}</HelpBlock>} 
                     <FormGroup controlId="formHorizontalEmail">
                         <Col componentClass={ControlLabel} sm={2}>
                             UserName
