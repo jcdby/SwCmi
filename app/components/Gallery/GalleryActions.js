@@ -1,6 +1,6 @@
 //@flow
 import { gallery_actions } from '../actions/action-types'
-import fetch from 'axios'
+import {Fetch} from '../../network/Fetch';
 
 function requestGalleryList () {
   return {
@@ -17,10 +17,11 @@ function receiveGalleryList (gallery_list: Array<Object>, count: number) {
 }
 
 function fetchGalleryList (activePage: number) {
+  let token = localStorage.getItem('userToken');
    return function (dispatch: Function, getState: Function) {
     let skip: number = (activePage - 1) * 10
     dispatch(requestGalleryList());
-    return fetch.get('http://localhost:10000/photos?skip=' + skip)
+    return Fetch.get('/photos?skip=' + skip, {headers: {'Authorization': token}})
       .then(res => dispatch(receiveGalleryList(res.data.items, res.data.count)))
   }
 }

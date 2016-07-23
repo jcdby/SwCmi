@@ -11,7 +11,7 @@ class LoginComponent extends Component {
   renderWhenLogined() {
     return (
       <Nav pullRight>
-     <NavItem eventKey={1} href="#" >{'UserName: ' + this.props.userState.userName + ' Logout'} </NavItem>
+     <NavItem eventKey={1} href="#" onClick={this.props.onClickLogout}>{'UserName: ' + this.props.userState.userName + ' Logout'} </NavItem>
      </Nav>
     )
   }

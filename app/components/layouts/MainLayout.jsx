@@ -20,6 +20,7 @@ export default
         this.onCloseSignIn = this.onCloseSignIn.bind(this);
         this.onCloseSignUp = this.onCloseSignUp.bind(this);
 
+
     }
 
     onClickSignIn() {
@@ -48,11 +49,13 @@ export default
         })
     }
 
+    
+
 
     render() {
         return (
             <div>
-                <HeaderContainer onClickSignIn={this.onClickSignIn} onClickSignUp={this.onClickSignUp} username={this.state.username} isLogined={this.state.isLogined} ></HeaderContainer>
+                <HeaderContainer  onClickSignIn={this.onClickSignIn} onClickSignUp={this.onClickSignUp} username={this.state.username} isLogined={this.state.isLogined} ></HeaderContainer>
                 <SignUpContainer showModal={this.state.showSignUpModal} closeModal={this.onCloseSignUp} ></SignUpContainer>
                <SignInContainer showModal={this.state.showSignInModal} closeModal={this.onCloseSignIn} ></SignInContainer>
                 {this.props.children}

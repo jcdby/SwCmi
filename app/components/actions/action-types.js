@@ -38,5 +38,6 @@ export const sign_in_up_actions = {
     SIGN_UP_FAILE: 'SIGN_UP_FAILE',
     SIGN_IN_SUCCESS: 'SIGN_IN_SUCCESS',
     SIGN_IN_FAILE: 'SIGN_IN_FAILE',
-    SIGN_IN: 'SIGN_IN'
+    SIGN_IN: 'SIGN_IN',
+    LOGOUT: 'LOGOUT'
 }

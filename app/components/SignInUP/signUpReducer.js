@@ -46,6 +46,9 @@ export function signInReducer(state = initialUserState, action: any) {
     case sign_in_up_actions.SIGN_IN_FAILE:
       return {...state, isSignIning: false, errOn: action.result.data.errOn, msg: action.result.data.msg }
       break;
+    case sign_in_up_actions.LOGOUT:
+      return {...state, isLogined: false} 
+      break;
     default:
       return state;
   }
