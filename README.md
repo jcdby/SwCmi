@@ -38,6 +38,7 @@ precondition:
 
 ###--------------------------------------
 * Gulp tasks not defined yet ----- @TODO
+* http://redux.js.org/docs/recipes/WritingTests.html
 * Testing:
 * npm install -g karma-cli
 * npm run test
@@ -53,6 +54,7 @@ precondition:
 *npm run lint-jsx
 *npm run lint-js
 
-*Using Travis
-*https://github.com/dwyl/learn-travis
-*
+###--------------------------------------
+* About Travis CI
+* Every time you push, the unit tests and the js/jsx lints are triggered.
+* Notifications are sent to one of our slack channel

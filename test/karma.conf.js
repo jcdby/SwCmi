@@ -1,17 +1,18 @@
 module.exports = function (config) {
     config.set({
-        browsers: [ 'PhantomJS' ], // phantom = headless browser
+        browsers: ['PhantomJS'], // phantom = headless browser
         //browsers: [ 'Chrome' ], // phantom = headless browser
         singleRun: true, //just run once by default
-        frameworks: [ 'jasmine'], //use the Jasmine framework
+        frameworks: ['jasmine'], //use the Jasmine framework
         files: [
             '../node_modules/phantomjs-polyfill-object-assign/object-assign-polyfill.js',
-            'src/**/**.test.js'
+            //'src/**/*.test.js'
+            'src/forum.ForumListItemView.test.js'
         ],
         preprocessors: {
-            'src/**/**.test.js': [ 'webpack', 'sourcemap' ]
+            'src/**/*.test.js': ['webpack', 'sourcemap']
         },
-        reporters: [ 'spec' ], //report results in this format
+        reporters: ['spec'], //report results in this format
         specReporter: {
             maxLogLines: 5,         // limit number of lines logged per test
             suppressErrorSummary: true,  // do not print error summary
@@ -21,10 +22,21 @@ module.exports = function (config) {
             showSpecTiming: false // print the time elapsed for each spec
         },
         webpack: { //kind of a copy of your webpack config
-            devtool: 'inline-source-map', //just do inline source maps instead of the default
+            //devtool: 'inline-source-map', //just do inline source maps instead of the default
+            devtool: "source-map",
+            resolve: {
+                extensions: ['', '.js', '.jsx']
+            },
             module: {
                 loaders: [
-                    { test: /\.js$/, loader: 'babel-loader' }
+                    {
+                        test: /\.jsx?$/,
+                        exclude: /(node_modules|bower_components)/,
+                        loader: 'babel-loader',
+                        query: {
+                            presets: ['es2015', 'stage-0', 'react']
+                        }
+                    }
                 ]
             }
         },

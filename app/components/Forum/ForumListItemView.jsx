@@ -56,7 +56,7 @@ class ForumListItemView extends React.Component {
 
         var forum = this.props.forumProp;
         return (
-            <span onMouseOut ={this.onMouseOut} onMouseOver ={this.onMouseOver}>
+            <span className="forum-list-item" onMouseOut ={this.onMouseOut} onMouseOver ={this.onMouseOver}>
                 <LinkContainer to={'/forum/' + forum.state}>
                     <a>
                         <CardTitle title={forum.title} subtitle={forum.subtitle} />

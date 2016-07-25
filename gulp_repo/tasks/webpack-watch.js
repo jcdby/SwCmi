@@ -1,5 +1,4 @@
 var webpack = require('webpack-stream');
-const babel = require('gulp-babel');
 
 module.exports = function (gulp) {
     return function () {

@@ -19,7 +19,7 @@ class ForumList extends React.Component {
 
     render() {
         return (
-            <div >
+            <div className="forum-list">
             {   this.createGridForum()   }
             </div>
         )

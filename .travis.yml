@@ -10,3 +10,7 @@ script:
     - gulp unit-tests
     - gulp lint
 
+# https://docs.travis-ci.com/user/notifications/#Slack-notifications
+#https://github.com/dwyl/learn-travis
+notifications:
+  slack: free-knights:dCzjsrracXvYHh421QPB2bKe
