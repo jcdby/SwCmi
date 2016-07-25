@@ -6,7 +6,6 @@ module.exports = function (config) {
         frameworks: [ 'jasmine'], //use the Jasmine framework
         files: [
             '../node_modules/phantomjs-polyfill-object-assign/object-assign-polyfill.js',
-            //'../node_modules/babel-polyfill/dist/polyfill.js',
             'src/**/**.test.js'
         ],
         preprocessors: {

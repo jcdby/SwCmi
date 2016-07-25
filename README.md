@@ -37,18 +37,22 @@ precondition:
 4. Starting the web-server: input command --> npm run start
 
 ###--------------------------------------
-Gulp tasks not defined yet ----- @TODO
-Testing:
-npm install -g karma-cli
-npm run test
+* Gulp tasks not defined yet ----- @TODO
+* Testing:
+* npm install -g karma-cli
+* npm run test
 
-Lint:
-http://eslint.org/docs/user-guide/getting-started
-https://github.com/gajus/eslint-plugin-flowtype
-(the packages have to be installed globally)
-npm install eslint -g
-npm install babel-eslint -g
-npm install eslint-plugin-flowtype -g
+* Lint:
+* http://eslint.org/docs/user-guide/getting-started
+* https://github.com/gajus/eslint-plugin-flowtype
+* (the packages have to be installed globally)
+* npm install eslint -g
+* npm install babel-eslint -g
+* npm install eslint-plugin-flowtype -g
 
-npm run lint-jsx
-npm run lint-js
+*npm run lint-jsx
+*npm run lint-js
+
+*Using Travis
+*https://github.com/dwyl/learn-travis
+*
