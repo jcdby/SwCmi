@@ -1,9 +1,12 @@
 module.exports = function (config) {
     config.set({
         browsers: [ 'PhantomJS' ], // phantom = headless browser
+        //browsers: [ 'Chrome' ], // phantom = headless browser
         singleRun: true, //just run once by default
-        frameworks: [ 'jasmine' ], //use the mocha test framework
+        frameworks: [ 'jasmine'], //use the Jasmine framework
         files: [
+            '../node_modules/phantomjs-polyfill-object-assign/object-assign-polyfill.js',
+            //'../node_modules/babel-polyfill/dist/polyfill.js',
             'src/**/**.test.js'
         ],
         preprocessors: {
