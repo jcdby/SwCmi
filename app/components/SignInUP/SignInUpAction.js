@@ -51,6 +51,7 @@ export function signUP(userInfo: Object) {
         if(res.data.isSignUpSuccess){
           dispatch(signUPS(res));
           dispatch(signInS(res));
+          location.reload();
         }else{
           dispatch(signUPF(res));
         }
@@ -66,6 +67,7 @@ export function signIn(userInfo: Object) {
       .then(res => {
         if(res.data.isSuccess){
           dispatch(signInS(res));
+          location.reload();
         }else{
           dispatch(signInF(res))
         }

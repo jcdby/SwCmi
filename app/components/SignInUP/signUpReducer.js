@@ -38,16 +38,17 @@ export function signInReducer(state = initialUserState, action: any) {
       break;
     case sign_in_up_actions.SIGN_IN_SUCCESS:
       let token = localStorage.getItem('userToken');
-      if(!token){
+      if (!token) {
         storeToken(action.result.data.token);
-      }      
+      }
       return {...state, isLogined: true, userName: action.result.data.userName, isSignIning: false, msg: action.result.data.msg || '' }
       break;
     case sign_in_up_actions.SIGN_IN_FAILE:
       return {...state, isSignIning: false, errOn: action.result.data.errOn, msg: action.result.data.msg }
       break;
     case sign_in_up_actions.LOGOUT:
-      return {...state, isLogined: false} 
+      location.reload();
+      return {...state, isLogined: false }
       break;
     default:
       return state;
