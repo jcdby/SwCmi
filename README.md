@@ -32,27 +32,26 @@ precondition:
 ###--------------------------------------
 
 1. open terminal(console in windows)
-2. Installing development packages: input command  ---> npm install
-3. Building the application: input command --> gulp
-4. Starting the web-server: input command --> npm run start
+2. Installing development packages: ---> npm install
+3. Building the application: --> gulp
+4. Starting the web-server: --> npm run start
 
 ###--------------------------------------
-* Gulp tasks not defined yet ----- @TODO
-* http://redux.js.org/docs/recipes/WritingTests.html
-* Testing:
-* npm install -g karma-cli
-* npm run test
+
+*Testing:
+
+*npm install -g karma-cli
+*gulp unit-tests
 
 * Lint:
+
 * http://eslint.org/docs/user-guide/getting-started
 * https://github.com/gajus/eslint-plugin-flowtype
 * (the packages have to be installed globally)
 * npm install eslint -g
 * npm install babel-eslint -g
 * npm install eslint-plugin-flowtype -g
-
-*npm run lint-jsx
-*npm run lint-js
+* gulp lint
 
 ###--------------------------------------
 * About Travis CI
