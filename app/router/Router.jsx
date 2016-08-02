@@ -5,6 +5,8 @@ import MainPageContainer from '../components/MainPage/MainPageContainer'
 
 import GalleryPageContainer from '../components/Gallery/GalleryPageContainer'
 
+import BiblePageContainer from '../components/Bible/BiblePageContainer'
+
 import MainLayout from '../components/layouts/MainLayout'
 
 import Old_ForumContainer from '../components/Old_Forum/Old_ForumContainer'
@@ -22,6 +24,7 @@ class APPRouter extends React.Component {
             <Router history={browserHistory}>
                 <Route path="/" component={MainLayout}>
                     <IndexRoute component={MainPageContainer}/>
+                    <Route path="bible" component={BiblePageContainer}/>
                     <Route path="gallery" component={GalleryPageContainer}/>
                     <Route path="old_forum">
                         <IndexRoute component={Old_ForumContainer} />

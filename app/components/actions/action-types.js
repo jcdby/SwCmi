@@ -21,6 +21,11 @@ export const gallery_actions = {
     RECEIVE_GALLERY_COUNT: 'RECEIVE_GALLERY_COUNT'
 };
 
+export const bible_actions = {
+    REQUEST_BIBLE_LIST: 'REQUEST_BIBLE_LIST',
+    RECEIVE_BIBLE_LIST: 'RECEIVE_BIBLE_LIST'
+};
+
 
 export const old_forum_actions = {
     GET_FORUM_CATEGORIES_SUCCESS: 'GET_FORUM_CATEGORIES_SUCCESS',
