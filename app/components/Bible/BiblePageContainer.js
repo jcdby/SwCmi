@@ -5,24 +5,36 @@ import React from 'react'
 import {connect} from 'react-redux'
 import BibleView from './BibleView'
 
+var json_mock = [{
+	"description" : "Arch",
+	"text" : "Build it!"
+},{
+	"description" : "Pokemons",
+	"text" : "Pokemons are okay!"
+}];
+
 class BiblePageContainer extends React.Component {
 
+
+
 	componentDidMount() {
-    	store.dispatch(bible_actions.fetchDataIfNeeded());
+    	//store.dispatch(bible_actions.fetchDataIfNeeded());
+    	//adfasfdkkk
   	}
 
     render() {
         return (
             <div>
-                <BibleView/>
+                <BibleView posts={json_mock}/>
             </div>
         )
     }
 }
 
-const mapStateToProps = (state: StoreState) => {
-  return {
-  }
-}
+const mapStateToStore = (store) => {
+  	return {
+        BiblePosts : store.BibleState.BiblePosts
+  	};
+};
 
-export default connect(mapStateToProps)(BiblePageContainer);
+export default connect(mapStateToStore)(BiblePageContainer);

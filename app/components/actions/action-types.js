@@ -22,8 +22,7 @@ export const gallery_actions = {
 };
 
 export const bible_actions = {
-    REQUEST_BIBLE_LIST: 'REQUEST_BIBLE_LIST',
-    RECEIVE_BIBLE_LIST: 'RECEIVE_BIBLE_LIST'
+    GET_BIBLE_LIST_SUCESS: 'GET_BIBLE_LIST_SUCESS',
 };
 
 

@@ -5,15 +5,14 @@ export default class BibleView extends React.Component {
     render() {
         return (
             <div>
-                <p>
-                123456
-                </p>
-                <p>
-                asdfasd
-                </p>
-                <p>
-                xcvasdk
-                </p>
+            {this.props.posts.map((obj) => {
+                return (
+                    <div>
+                    <p>{obj.description}</p>
+                    <p>{obj.text}</p>
+                    </div>
+                )
+            })}
             </div>
           )
     }
