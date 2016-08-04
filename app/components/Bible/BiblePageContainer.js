@@ -25,7 +25,7 @@ class BiblePageContainer extends React.Component {
     render() {
         return (
             <div>
-                <BibleView posts={json_mock}/>
+                <BibleView {...this.props} posts={json_mock}/>
             </div>
         )
     }
@@ -33,7 +33,8 @@ class BiblePageContainer extends React.Component {
 
 const mapStateToStore = (store) => {
   	return {
-        BiblePosts : store.BibleState.BiblePosts
+        BiblePosts : store.BibleState.BiblePosts,
+    	userState : store.userState
   	};
 };
 
