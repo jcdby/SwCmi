@@ -42,7 +42,7 @@ export default
                                 갤러리
                             </NavItem>
                         </LinkContainer>
-                        <LinkContainer to="/old_forum">
+                        <LinkContainer to="/bible">
                             <NavItem eventKey={5}>
                                 Daily Bible
                             </NavItem>

@@ -1,19 +1,16 @@
 //@flow
-import { gallery_actions } from '../actions/action-types'
+import { bible_actions } from '../actions/action-types'
 
-const initialState: GalleryState = {
-  gallery_list: [],
-  isFetching: false,
-  count: 0
+const initialState: BibleState = {
+  BiblePosts: []
 };
 
-export default function galleryListReducer (state: GalleryState = initialState , action: any) {
-  switch (action.type) {
-    case gallery_actions.REQUEST_GALLERY_LIST:
-      return {...state, isFetching: true}
-    case gallery_actions.RECEIVE_GALLERY_LIST:
-      return {...state, gallery_list: action.gallery_list, isFetching: false, count: action.count}
-    default:
-      return state
-  }
+export default function bibleReducer (state: BibleState = initialState , action: any) {
+    switch (action.type) {
+        case bible_actions.GET_BIBLE_LIST_SUCESS:
+            var newState = Object.assign({}, state, {BiblePosts: action.BiblePosts});
+            return newState;
+        default:
+           return state;
+    }
 }
