@@ -6,3 +6,6 @@ public/bundle.js.map
 .vscode/launch.json
 .idea/*
 .idea/workspace.xml
+.idea/
+app/components/Gallery/AddPhotoView.jsx
+resources/

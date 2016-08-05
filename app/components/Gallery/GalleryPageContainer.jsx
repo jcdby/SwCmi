@@ -1,17 +1,23 @@
-import React from 'react'
-import {connect} from 'react-redux'
-//import Header from '../views/Header'
-//import {Link} from 'react-router'
-import GalleryView from './GalleryView'
-import * as gallery_actions from './GalleryActions'
-import store from '../../store/Store'
+import React from 'react';
+import {connect} from 'react-redux';
+import GalleryView from './GalleryView';
+import * as gallery_actions from './GalleryActions';
+import store from '../../store/Store';
+import ModalView from '../CommonViews/ModalView';
+import AddPhotoView from './AddPhotoView'
+
 
 
 export class GalleryPageContainer extends React.Component {
 
   constructor(props) {
     super(props)
-    
+    this.state = {
+      showModal: false
+    }
+
+    this.closeModal = this.closeModal.bind(this);
+    this.addPhoto = this.addPhoto.bind(this);
   }
 
   componentDidMount() {
@@ -19,6 +25,20 @@ export class GalleryPageContainer extends React.Component {
   }
 
   componentWillMount() {
+  }
+
+  closeModal() {
+    this.setState({
+      showModal: false
+    })
+  }
+
+  addPhoto() {
+    console.log("i am clicked!")
+    this.setState({
+      showModal: true
+    });
+    console.log(this.state.showModal)
   }
 
 
@@ -32,7 +52,10 @@ export class GalleryPageContainer extends React.Component {
   render() {
     return (
       <div>
-        <GalleryView handleSelect={this.handleSelect}  count={this.props.count} galleryList={this.props.galleryList}></GalleryView>
+        <GalleryView handleSelect={this.handleSelect}  count={this.props.count} galleryList={this.props.galleryList} addPhoto={this.addPhoto}></GalleryView>
+        <ModalView title='Upload Image' showModal={this.state.showModal} closeModal={this.closeModal}>
+          <AddPhotoView></AddPhotoView>
+        </ModalView>
       </div>
     )
   }

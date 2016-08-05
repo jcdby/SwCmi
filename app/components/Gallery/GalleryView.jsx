@@ -19,15 +19,13 @@ export default class GalleryView extends React.Component {
         super(props)
     }
 
-    handleImgError() {
-
-    }
+    
 
 
     render() {
         return (<div style={{ position: 'relative', width: '80%', margin: 'auto', paddingTop: 20, paddingBottom: 50 }}>
             <div>
-                <AdvancedPagination handleSelect={this.props.handleSelect} pageNo={this.props.count} ></AdvancedPagination>
+                <AdvancedPagination addPhoto={this.props.addPhoto} handleSelect={this.props.handleSelect} pageNo={this.props.count} ></AdvancedPagination>
             </div>
             <StoneCutterGrid
                 columnWidth={350}

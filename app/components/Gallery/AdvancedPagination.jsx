@@ -39,7 +39,7 @@ class AdvancedPagination extends Component {
           </Col>
           <Col md={2}>
           <div  ></div>
-            <Button style={{margin: 20}} bsStyle="primary">Add Photo</Button>
+            <Button onClick={this.props.addPhoto} style={{margin: 20}} bsStyle="primary">Add Photo</Button>
           </Col>
         </Row>
 
