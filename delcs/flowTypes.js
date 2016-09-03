@@ -1,7 +1,12 @@
 declare type GalleryState = {
   gallery_list: Array<Object>,
   isFetching: boolean,
-  count: nubmer
+  count: number,
+  isUploading: boolean,
+  uploadingStatusMsg: string,
+  isUploadSuccess: boolean,
+  status: Array,
+  init: boolean
 }
 
 declare type UserState = {
@@ -24,4 +29,6 @@ declare type StoreState = {
   userState: UserState,
   signUpState: SignUpState
 }
+
+
 

@@ -5,7 +5,7 @@ import AdvancedPagination from './AdvancedPagination';
 import Button from 'react-bootstrap/lib/Button'
 
 
-const StoneCutterGrid = makeResponsive(measureItems(SpringGrid, { measureImages: true }), {
+const StoneCutterGrid = makeResponsive(measureItems(CSSGrid, { measureImages: true }), {
     maxWidth: 1920,
     minPadding: 100
 });
@@ -16,7 +16,30 @@ export default class GalleryView extends React.Component {
 
 
     constructor(props) {
-        super(props)
+        super(props);
+        this.showImg = this.showImg.bind(this);
+        this.showAddPhotoButton = this.showAddPhotoButton.bind(this);
+    }
+
+    showImg(item) {
+        if(!item.file_name1) {
+            return <img  src={"http://localhost:10000/" + item.files[0]} onError={(e) => { e.target.src = DEFAULT_IMG } }
+            />
+        }else {
+            return <img  src={"http://localhost:10000/" + item.file_name1} onError={(e) => { e.target.src = DEFAULT_IMG } }
+            />
+        }
+
+    }
+
+    showAddPhotoButton() {
+        if(!this.props.username) {
+            return <div>Please Sign UP/IN</div>
+        }else {
+            return <div>
+            <AdvancedPagination addPhoto={this.props.addPhoto} handleSelect={this.props.handleSelect} pageNo={this.props.count} ></AdvancedPagination>
+            </div>
+        }
     }
 
     
@@ -24,9 +47,7 @@ export default class GalleryView extends React.Component {
 
     render() {
         return (<div style={{ position: 'relative', width: '80%', margin: 'auto', paddingTop: 20, paddingBottom: 50 }}>
-            <div>
-                <AdvancedPagination addPhoto={this.props.addPhoto} handleSelect={this.props.handleSelect} pageNo={this.props.count} ></AdvancedPagination>
-            </div>
+              {this.showAddPhotoButton()}
             <StoneCutterGrid
                 columnWidth={350}
                 gutterWidth={5}
@@ -38,8 +59,7 @@ export default class GalleryView extends React.Component {
                 {this.props.galleryList.map((item, index) => {
                     return (<Card >
                         <CardMedia style={{ width: 350 }}>
-                            <img  src={"http://localhost:10000/" + item.file_name1} onError={(e) => { e.target.src = DEFAULT_IMG } }
-                                />
+                            {this.showImg(item)}
                         </CardMedia>
                         <CardTitle title={item.subject} subtitle={item.name} />
                         <CardText>

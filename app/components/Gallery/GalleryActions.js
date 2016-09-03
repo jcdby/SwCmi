@@ -27,11 +27,7 @@ function fetchGalleryList (activePage: number) {
 }
 
 function shouldFetchData(state: GalleryState) {
-    if(state.isFetching){
-      return false;
-    }else {
-    return true;
-    }
+    return !state.isFetching;
 }
 
 export function fetchDataIfNeeded(activePage: number) {
@@ -39,7 +35,6 @@ export function fetchDataIfNeeded(activePage: number) {
     activePage = 1
   }
     return (dispatch: Function, getState: Function) => {
-      console.log(getState().galleryState);
       if(shouldFetchData(getState().galleryState)){
         return dispatch(fetchGalleryList(activePage))
       }else{
@@ -48,7 +43,57 @@ export function fetchDataIfNeeded(activePage: number) {
     }
 }
 
-export function uploadingI() {
-  
+
+
+function uploadingImgs(status) {
+  return {
+    type: gallery_actions.UPLOADING_IMGS,
+    status
+  }
+}
+
+function uploadSuccess() {
+  return {
+    type: gallery_actions.UPLOAD_SUCCESS
+  }
+}
+
+function uploadFail() {
+  return {
+    type: gallery_actions.UPLOAD_FAILE
+  }
+}
+
+export function hasFormErrors(status) {
+  return {
+    type: gallery_actions.FORM_ERROR,
+    status
+  }
+}
+
+export function uploadImgs(uploadData: FormData, status) {
+  return (dispatch: Function) => {
+      dispatch(uploadingImgs(status));
+      return Fetch.post('/photos', uploadData)
+        .then(res => {
+          if(res.data.isSuccess){
+            dispatch(uploadSuccess())
+          }else {
+            dispatch(uploadFail())
+          }
+        })
+  }
+
+}
+
+export function cancleUpload() {
+  return {
+    type: gallery_actions.UPLOAD_CANCLE,
+    status: {
+      memoStatus: 0,
+      subjectStatus: 0,
+      imgStatus: 0
+    }
+  }
 }
 
